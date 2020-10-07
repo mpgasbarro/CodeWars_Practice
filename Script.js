@@ -251,12 +251,12 @@
 
 // // console.log(sumOfMultiplesofThreeAndFive(10))
 // // // should be 23
-// // Explanation: Multiples of three and five below 10 are 3, 5, 6, and 9. The sum of 3, 5, 6 and 9 is 23. 
+// // Explanation: Multiples of three and five below 10 are 3, 5, 6, and 9. The sum of 3, 5, 6 and 9 is 23.
 
 // console.log(sumOfMultiplesofThreeAndFive(1000))
 
 // ________________________________________________________________________
-// 
+//
 // sum = 2
 // function evenFibonnacisSum(upperlimit) {
 // 	for( let i = 1; i < upperlimit; i++) {
@@ -271,7 +271,7 @@
 
 // if time
 
-// 
+//
 
 // const myIngredients = ['salt', 'pineapple', 'flour', 'cups'];
 // const walmart = ['cups', 'pear', 'orange', 'salt', 'pineapple', 'plates', 'tofu']
@@ -279,14 +279,13 @@
 // function isItThere(arr) {
 //     let doesItHave = []
 //     for (let i = 0; i < arr.length; i++) {
-//         if(!walmart.includes(arr[i])){  
+//         if(!walmart.includes(arr[i])){
 //             return false
 //         } else {
 // 			return true;
-// 		} 
+// 		}
 //      }
 //  }
-
 
 // console.log(isItThere(myIngredients));
 
@@ -306,7 +305,7 @@
 // const numbers = [23, 19, 23, 52, 12];
 // sum = 0
 
-// function whatIsVal(val) { 
+// function whatIsVal(val) {
 // for (let i=0; i < val.length; i++){
 // 		sum += val[i]
 // 	} return sum
@@ -352,7 +351,6 @@
 // console.log(index([0, 1], 0));
 // _____________________________________
 
-
 // const arr = N => {
 // let array = [];
 // for(let i=0; i < N ; i++){
@@ -382,13 +380,13 @@
 //           badNum
 //           newVal = 0
 //         } else {
-          
+
 //           badNum = arr[i]
 //           console.log('BadNum val ' + badNum);
 //             }
 //           } console.log("final one" + badNum);
 //         }
-    
+
 // solve([-3, 1, 2, -2, -1, -4, 3]);
 
 // function namez(name, otherNam) {
@@ -399,11 +397,10 @@
 //   }
 // }
 
-
 // namez(3, -3)
 // Will need to loop through each part of the array
-// Will then need to compare each iteratio with previous iterations. 
-// will need to compare both positive and negative for the number. 
+// Will then need to compare each iteratio with previous iterations.
+// will need to compare both positive and negative for the number.
 
 // [1, -1, 2, -2, 3];
 // ------------------------------------------------------
@@ -456,22 +453,19 @@
 // 		});
 //     for(let i= 0; i < data.length-1; i++){
 //          newData.push(data[i])
-//     } 
+//     }
 //     newData.sort(function(a, b) {
 // 			return b - a;
 //         });
 //     data.push(...newData);
-//     return(data);      
+//     return(data);
 // }
 
 // mirror([3,5,2,1,-6, 9, 23, 64, -21, -7])
 
-
-
-
-// Need to add to the array, the same value. Doubling value, unless it is the largest value. 
+// Need to add to the array, the same value. Doubling value, unless it is the largest value.
 // Will need to loop through the data to see which number is the largest
-// If the number is the largest, wont duplicate. 
+// If the number is the largest, wont duplicate.
 
 // function reverseLetter(str) {
 //     let newStr = str.split("").reverse();
@@ -540,7 +534,45 @@
 // twoOldestAges([1,2,10,8, 11, 45, 32, 68, 12, 32, 65, 37, 8654, 234, 123])
 // ------------------------------------------------------------------
 
-function solution(roman) {
-	// complete the solution by transforming the
-	// string roman numeral into an integer
-}
+// CODE WARS PRACTICE - 10/07/20 //
+
+// Create a function that takes a Roman numeral as its argument and returns its value as a numeric decimal integer. You don't need to validate the form of the Roman numeral.
+// Modern Roman numerals are written by expressing each decimal digit of the number to be encoded separately, starting with the leftmost digit and skipping any 0s. So 1990 is rendered "MCMXC" (1000 = M, 900 = CM, 90 = XC) and 2008 is rendered "MMVIII" (2000 = MM, 8 = VIII). The Roman numeral for 1666, "MDCLXVI", uses each letter in descending order.
+// Example:
+// solution('XXI'); // should return 21
+
+// function translateRomanNumeral(romanNumeral) {
+// 	var DIGIT_VALUES = {
+// 		I: 1,
+// 		V: 5,
+// 		X: 10,
+// 		L: 50,
+// 		C: 100,
+// 		D: 500,
+// 		M: 1000,
+// 	};
+
+// 	var result = 0;
+// 	var input = romanNumeral.split('');
+
+// 	for (var i = 0; i < input.length; i++) {
+// 		var currentLetter = DIGIT_VALUES[input[i]];
+// 		console.log(DIGIT_VALUES);
+// 		var nextLetter = DIGIT_VALUES[input[i + 1]];
+// 		console.log(DIGIT_VALUES[input[i + 1]]);
+// 		if (currentLetter === undefined) {
+// 			return 'null';
+// 		} else {
+// 			if (currentLetter < nextLetter) {
+// 				result += nextLetter - currentLetter;
+// 				i++;
+// 			} else {
+// 				result += currentLetter;
+// 			}
+// 		}
+// 	}
+
+// 	return(result);
+// }
+
+// translateRomanNumeral("LCD");
