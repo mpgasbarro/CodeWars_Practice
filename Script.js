@@ -542,7 +542,7 @@
 // solution('XXI'); // should return 21
 
 // function translateRomanNumeral(romanNumeral) {
-// 	var DIGIT_VALUES = {
+// 	let DIGIT_VALUES = {
 // 		I: 1,
 // 		V: 5,
 // 		X: 10,
@@ -552,14 +552,12 @@
 // 		M: 1000,
 // 	};
 
-// 	var result = 0;
-// 	var input = romanNumeral.split('');
+// 	let result = 0;
+// 	let input = romanNumeral.split('');
 
-// 	for (var i = 0; i < input.length; i++) {
-// 		var currentLetter = DIGIT_VALUES[input[i]];
-// 		console.log(DIGIT_VALUES);
-// 		var nextLetter = DIGIT_VALUES[input[i + 1]];
-// 		console.log(DIGIT_VALUES[input[i + 1]]);
+// 	for (let i = 0; i < input.length; i++) {
+// 		let currentLetter = DIGIT_VALUES[input[i]];
+// 		let nextLetter = DIGIT_VALUES[input[i + 1]];
 // 		if (currentLetter === undefined) {
 // 			return 'null';
 // 		} else {
@@ -572,7 +570,32 @@
 // 		}
 // 	}
 
-// 	return(result);
+// 	console.log(result);
 // }
 
-// translateRomanNumeral("LCD");
+// translateRomanNumeral("DCL");
+
+// --------------------------------------------------------------------
+// CODE WARS PRACTICE - 10/08/20 //
+// stations is a list/array of distances (miles) from one station to the next along the Pony Express route.
+// Implement the riders method/function, to return how many riders are necessary to get the mail from one end to the other.
+// NOTE: Each rider travels as far as he can, but never more than 100 miles.
+
+// function riders(stations) {
+//     let sum = 0;
+
+//     for(let i = 0; i< stations.length; i++ ){
+//         sum += stations[i] }
+
+//     if(sum <= 100) {
+//             console.log(1)
+//     } else if( sum >= 100 && sum <= 200) {
+//         console.log(2)
+//     } else if (sum >= 200 && sum < 300){
+//         console.log(3)
+//     } else if( sum > 300 && sum < 400){
+//         console.log(4)
+//             }
+//         }
+
+// riders([20, 8, 25, 46, 20, 20, 17, 27, 34, 37, 29, 34, 49, 33]);
