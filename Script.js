@@ -598,4 +598,44 @@
 //             }
 //         }
 
-// riders([20, 8, 25, 46, 20, 20, 17, 27, 34, 37, 29, 34, 49, 33]);
+// // riders([20, 8, 25, 46, 20, 20, 17, 27, 34, 37, 29, 34, 49, 33]);
+// let date = new Date()
+
+// console.log(date);
+// -----------------------------------------------------------------
+// CODEWARS - 10/09/20
+// You receive the name of a city as a string, and you need to return a string that shows how many times each letter shows up in the string by using an asterisk (*).
+
+// For example:
+
+// "Chicago"  -->  "c:**,h:*,i:*,a:*,g:*,o:*"
+// As you can see, the letter c is shown only once, but with 2 asterisks.
+
+// The return string should include only the letters (not the dashes, spaces, apostrophes, etc). There should be no spaces in the output, and the different letters are separated by a comma (,) as seen in the example above.
+
+// Break String into an array
+// loop through the array
+// have two arrays - one with letters and one without
+// make a conditional statement
+
+function getStrings(city) {
+	let newCity = city.toLowerCase().split('');
+	console.log(newCity);
+	let newArr = [];
+	let duplicate = '';
+
+	for (let i = 0; i < newCity.length; i++) {
+		if (
+			newArr.indexOf(newCity[i]) === -1 &&
+			newArr.indexOf(newCity[i] + ':*') === -1
+		) {
+			newArr.push(newCity[i] + ':*');
+		} else {
+			duplicate = newArr.indexOf(newCity[i] + ':*');
+			newArr[duplicate] = newCity[i] + ':**';
+		}
+	}
+	console.log(newArr);
+}
+
+getStrings('Las Vegas');
