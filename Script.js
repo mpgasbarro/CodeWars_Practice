@@ -14,7 +14,7 @@
 // // HELPER FUNCTION: merge two sorted arrays
 // function merge(arr1, arr2) {
 // 	var result = [];
-// 	while (arr1.length && arr2.length) {
+// 	while (arr1.length || arr2.length) {
 // 		if (arr1[0] <= arr2[0]) {
 // 			result.push(arr1.shift());
 // 		} else {
@@ -618,24 +618,109 @@
 // have two arrays - one with letters and one without
 // make a conditional statement
 
-function getStrings(city) {
-	let newCity = city.toLowerCase().split('');
-	console.log(newCity);
-	let newArr = [];
-	let duplicate = '';
+// function getStrings(city) {
+// 	let newCity = city.toLowerCase().split('');
+// 	console.log(newCity);
+// 	let newArr = [];
+// 	let duplicate = '';
+// 	let invis = '';
 
-	for (let i = 0; i < newCity.length; i++) {
-		if (
-			newArr.indexOf(newCity[i]) === -1 &&
-			newArr.indexOf(newCity[i] + ':*') === -1
-		) {
-			newArr.push(newCity[i] + ':*');
-		} else {
-			duplicate = newArr.indexOf(newCity[i] + ':*');
-			newArr[duplicate] = newCity[i] + ':**';
-		}
-	}
-	console.log(newArr);
-}
+// 	for (let i = 0; i < newCity.length; i++) {
+// 		if (
+// 			newArr.indexOf(newCity[i]) === -1 &&
+// 			newArr.indexOf(newCity[i] + ':*') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':**') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':***') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':****') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':*****') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':******') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':*******') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':********') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':*********') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':**********') === -1 &&
+// 			newArr.indexOf(newCity[i] + ':***********') === -1
+// 		) {
+// 			newArr.push(newCity[i] + ':*');
+// 		} else if (newArr.indexOf(newCity[i] + ':**') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ' :**');
+// 			newArr[duplicate] = newCity[i] + ':***';
+// 		} else if (newArr.indexOf(newCity[i] + ':***') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':***');
+// 			newArr[duplicate] = newCity[i] + ':****';
+// 		} else if (newArr.indexOf(newCity[i] + ':****') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':****');
+// 			newArr[duplicate] = newCity[i] + ':*****';
+// 		} else if (newArr.indexOf(newCity[i] + ':*****') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':*****');
+// 			newArr[duplicate] = newCity[i] + ':******';
+// 		} else if (newArr.indexOf(newCity[i] + ':******') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':******');
+// 			newArr[duplicate] = newCity[i] + ':*******';
+// 		} else if (newArr.indexOf(newCity[i] + ':*******') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':*******');
+// 			newArr[duplicate] = newCity[i] + ':********';
+// 		} else if (newArr.indexOf(newCity[i] + ':********') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':********');
+// 			newArr[duplicate] = newCity[i] + ':*********';
+// 		} else if (newArr.indexOf(newCity[i] + ':*********') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':*********');
+// 			newArr[duplicate] = newCity[i] + ':**********';
+// 		} else if (newArr.indexOf(newCity[i] + ':**********') >= 0) {
+// 			duplicate = newArr.indexOf(newCity[i] + ':**********');
+// 			newArr[duplicate] = newCity[i] + ':***********';
+// 		} else {
+// 			duplicate = newArr.indexOf(newCity[i] + ':*');
+// 			newArr[duplicate] = newCity[i] + ':**';
+// 		}
+// 	}
+// 	if (newArr.indexOf(" :*")> 0) {
+// 		invis = newArr.indexOf(' :*');
+// 		newArr.splice(invis, 1);
+// 	} else if (newArr.indexOf(" :**")> 0) {
+// 		invis = newArr.indexOf(' :**');
+//         newArr.splice(invis, 1);
+//     } else if (newArr.indexOf(" :***")> 0) {
+// 		invis = newArr.indexOf(' :***');
+//         newArr.splice(invis, 1);
+//     } else if (newArr.indexOf(" :****")> 0) {
+// 		invis = newArr.indexOf(' :****');
+//         newArr.splice(invis, 1);
+//     }
+// 	let newVal = newArr.join();
+// 	console.log(newVal);
+// }
 
-getStrings('Las Vegas');
+// getStrings('lllccclas vegas f ');
+//
+//
+//******** */ CODEWARS PRACTICE - 10/13/20***********
+
+// In this Kata, you will be given an array of numbers in which two numbers occur once and the rest occur only twice. Your task will be to return the sum of the numbers that occur only once.
+// For example, repeats([4,5,7,5,4,8]) = 15 because only the numbers 7 and 8 occur once, and their sum is 15.
+// More examples in the test cases.
+// Good luck!
+
+// function repeats(arr){
+//     let newArr = [];
+//     let doublecheck = "";
+//     let sum = 0;
+
+//     for (let i=0; i <= arr.length -1 ; i++){
+//        if( newArr.indexOf(arr[i]) === -1 ){
+//            newArr.push(arr[i])
+//        } else {
+//             doublecheck = newArr.indexOf(arr[i])
+//             newArr.splice(doublecheck, 1);
+//         };
+//     };
+
+//     function myFunc(item){
+//         sum += item;
+//     }
+//     newArr.forEach(myFunc)
+
+//     return sum;
+
+// }
+
+// repeats([4, 5, 7, 5, 8, 4]);
