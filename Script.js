@@ -724,3 +724,27 @@
 // }
 
 // repeats([4, 5, 7, 5, 8, 4]);
+
+// CODEWARS PRACTICE - 10/15/20
+// Return the number (count) of vowels in the given string.
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+// The input string will only consist of lower case letters and/or spaces.
+
+// need to switch string to an array
+// iterate through the array
+// conditional of if it matches a vowel, add to sum
+// print sum at end
+
+// function getCount(str) {
+//     let vowelsCount = 0;
+//     let arr = str.split("")
+//     for(let i = 0; i < arr.length; i++){
+//         if (arr[i] === "a"|| arr[i] === "e" || arr[i] === "i"|| arr[i] === "o"|| arr[i] === "u") {
+//             vowelsCount ++
+//         }
+//     }
+
+// 	return vowelsCount;
+// }
+
+getCount('Hellooo');
