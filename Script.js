@@ -747,4 +747,75 @@
 // 	return vowelsCount;
 // }
 
-getCount('Hellooo');
+// getCount('Hellooo');
+
+//  CODEWARS PRACTICE - 10/15/20
+// Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+// Loop through the array
+// if it matches with 0, maybe pop and then push?
+
+// var moveZeros = function (arr) {
+//     let newArr=[]
+// 	for(let i=0; i <= arr.length; i++){
+//         if( arr[i] == 0){
+//             arr.splice(i, 1)
+//             newArr.push(0)
+//             console.log(arr);
+//             console.log(newArr);
+//         }
+//     } console.log([...arr, ...newArr]);
+// };
+
+// moveZeros([9, 0, 9, 1, 2, 1, 1, 3, 1, 9, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0]);
+
+// ___________________________________________________________________________________
+// CODEWARS PRACTICE - 10/21/20
+// You are given an array of positive ints where every element appears three times, except one that appears only once (let's call it x) and one that appears only twice (let's call it y).
+
+// Your task is to find x * x * y.
+
+// Example
+// For arr=[1, 1, 1, 2, 2, 3], the result should be 18
+
+// 3 x 3 x 2 = 18
+
+// For arr=[6, 5, 4, 100, 6, 5, 4, 100, 6, 5, 4, 200], the result should be 4000000
+
+// 200 x 200 x 100 = 4000000
+
+// Input/Output
+// [input] integer array arr
+
+// an array contains positive integers.
+
+// [output] an integer
+
+// The value of x * x * y
+
+// ***** SOLUTION *****
+
+function missingValues(arr) {
+	let x;
+	let y;
+	let val = {};
+	let newArr = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (!val[arr[i]]) {
+			val[arr[i]] = 1;
+		} else {
+			val[arr[i]]++;
+		}
+	}
+	newArr = Object.keys(val);
+	newArr.forEach((num) => {
+		if (val[num] === 1) {
+			x = num;
+		} else if (val[num] === 2) {
+			y = num;
+		}
+	});
+	return x * x * y;
+}
+
+missingValues([96, 56, 24, 46, 75, 46, 75, 21, 46, 21, 75, 96, 56, 96, 56]);
