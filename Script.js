@@ -843,3 +843,30 @@
 // }
 
 // solution(16)
+
+// _________________________________________________________________________________
+// CODEWARS PRACTICE  - 10/24/20
+
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+//  ***** SOLUTION *****
+function findOdd(A) {
+	let odd = {};
+	let answer = 0;
+	for (let i = 0; i < A.length; i++) {
+		if (!odd[A[i]]) {
+			odd[A[i]] = 1;
+		} else {
+			odd[A[i]]++;
+		}
+	}
+	let val = Object.keys(odd);
+	val.map((x) => {
+		if (odd[x] % 2 != 0) answer = parseInt(x);
+	});
+	return answer;
+}
+
+findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]);
