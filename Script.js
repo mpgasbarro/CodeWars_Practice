@@ -795,27 +795,51 @@
 
 // ***** SOLUTION *****
 
-function missingValues(arr) {
-	let x;
-	let y;
-	let val = {};
-	let newArr = [];
-	for (let i = 0; i < arr.length; i++) {
-		if (!val[arr[i]]) {
-			val[arr[i]] = 1;
-		} else {
-			val[arr[i]]++;
-		}
-	}
-	newArr = Object.keys(val);
-	newArr.forEach((num) => {
-		if (val[num] === 1) {
-			x = num;
-		} else if (val[num] === 2) {
-			y = num;
-		}
-	});
-	return x * x * y;
-}
+// function missingValues(arr) {
+// 	let x;
+// 	let y;
+// 	let val = {};
+// 	let newArr = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (!val[arr[i]]) {
+// 			val[arr[i]] = 1;
+// 		} else {
+// 			val[arr[i]]++;
+// 		}
+// 	}
+// 	newArr = Object.keys(val);
+// 	newArr.forEach((num) => {
+// 		if (val[num] === 1) {
+// 			x = num;
+// 		} else if (val[num] === 2) {
+// 			y = num;
+// 		}
+// 	});
+// 	return x * x * y;
+// }
 
-missingValues([96, 56, 24, 46, 75, 46, 75, 21, 46, 21, 75, 96, 56, 96, 56]);
+// missingValues([96, 56, 24, 46, 75, 46, 75, 21, 46, 21, 75, 96, 56, 96, 56]);
+
+// _______________________________________________________________________________
+
+// CODEWARS PRACTICE  - 10/23/20
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once. Also, if a number is negative, return 0(for languages that do have them)
+
+// ***** SOLUTION *****
+
+// function solution(number) {
+// 	let sum = 0
+// 	for (let i = 1; i < number; i++) {
+// 		if(i % 3 == 0){
+// 			sum += i
+// 		} else if (i % 5 == 0){
+// 			sum += i
+// 		}
+// 	} return sum
+// }
+
+// solution(16)
