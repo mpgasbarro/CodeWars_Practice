@@ -880,18 +880,39 @@
 
 // ******SOLUTION*****
 
-function spinWords(n) {
-	newArr = n.split(' ');
-	newWord = '';
-	ind = 0;
-	for (let i = 0; i < newArr.length; i++) {
-		if (newArr[i].length >= 5) {
-			newWord = newArr[i].split('').reverse().join('');
-			ind = newArr.indexOf(newArr[i]);
-			newArr.splice(ind, 1, newWord);
-		}
+// function spinWords(n) {
+// 	newArr = n.split(' ');
+// 	newWord = '';
+// 	ind = 0;
+// 	for (let i = 0; i < newArr.length; i++) {
+// 		if (newArr[i].length >= 5) {
+// 			newWord = newArr[i].split('').reverse().join('');
+// 			ind = newArr.indexOf(newArr[i]);
+// 			newArr.splice(ind, 1, newWord);
+// 		}
+// 	}
+// 	console.log(newArr.join(' '));
+// }
+
+// spinWords('Hey fellow warriors');
+
+// CODEWARS PRACTICE - 10/27/2020
+// Digital root is the recursive sum of all the digits in a number.
+
+// Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+
+// ***** SOLUTION *****
+let sum = 0;
+
+function digital_root(n) {
+	let str = n.toString().split('');
+	if (n.toString().length <= 1) {
+		return n;
 	}
-	console.log(newArr.join(' '));
+	for (let i = 0; i < str.length; i++) {
+		sum += parseInt(str[i]);
+	}
+	console.log(sum);
 }
 
-spinWords('Hey fellow warriors');
+digital_root(456);
