@@ -852,21 +852,46 @@
 // There will always be only one integer that appears an odd number of times.
 
 //  ***** SOLUTION *****
-function findOdd(A) {
-	let odd = {};
-	let answer = 0;
-	for (let i = 0; i < A.length; i++) {
-		if (!odd[A[i]]) {
-			odd[A[i]] = 1;
-		} else {
-			odd[A[i]]++;
+
+// function findOdd(A) {
+// 	let odd = {};
+// 	let answer = 0;
+// 	for (let i = 0; i < A.length; i++) {
+// 		if (!odd[A[i]]) {
+// 			odd[A[i]] = 1;
+// 		} else {
+// 			odd[A[i]]++;
+// 		}
+// 	}
+// 	let val = Object.keys(odd);
+// 	val.map((x) => {
+// 		if (odd[x] % 2 != 0) answer = parseInt(x);
+// 	});
+// 	return answer;
+// }
+
+// findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]);
+
+// ______________________________________________________________________________________________
+// CODEWARS PRACTICE - 10/26/20
+// Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+
+// Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw" spinWords( "This is a test") => returns "This is a test" spinWords( "This is another test" )=> returns "This is rehtona test"
+
+// ******SOLUTION*****
+
+function spinWords(n) {
+	newArr = n.split(' ');
+	newWord = '';
+	ind = 0;
+	for (let i = 0; i < newArr.length; i++) {
+		if (newArr[i].length >= 5) {
+			newWord = newArr[i].split('').reverse().join('');
+			ind = newArr.indexOf(newArr[i]);
+			newArr.splice(ind, 1, newWord);
 		}
 	}
-	let val = Object.keys(odd);
-	val.map((x) => {
-		if (odd[x] % 2 != 0) answer = parseInt(x);
-	});
-	return answer;
+	console.log(newArr.join(' '));
 }
 
-findOdd([1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5]);
+spinWords('Hey fellow warriors');
