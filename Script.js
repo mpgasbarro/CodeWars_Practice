@@ -896,23 +896,25 @@
 
 // spinWords('Hey fellow warriors');
 
+// _________________________________________________________________________________________________
 // CODEWARS PRACTICE - 10/27/2020
 // Digital root is the recursive sum of all the digits in a number.
 
 // Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
 
 // ***** SOLUTION *****
-let sum = 0;
 
 function digital_root(n) {
+	let sum = 0;
 	let str = n.toString().split('');
-	if (n.toString().length <= 1) {
+	if (str.length <= 1) {
 		return n;
+	} else {
+		for (let i = 0; i < str.length; i++) {
+			sum += parseInt(str[i]);
+		}
 	}
-	for (let i = 0; i < str.length; i++) {
-		sum += parseInt(str[i]);
-	}
-	console.log(sum);
+	return digital_root(sum);
 }
 
-digital_root(456);
+console.log(digital_root(456));
