@@ -931,24 +931,54 @@
 
 //  persistence(4) === 0 // because 4 is already a one-digit number
 
-let count = 0;
+// let count = 0;
 
-function persistence(num) {
-	let sum = 1;
-	let newNum = sum;
-	numStr = num.toString().split('');
+// function persistence(num) {
+// 	let sum = 1;
+// 	numStr = num.toString().split('');
 
-	if (numStr.length <= 1) {
-		return count;
-		count = 0;
-	} else {
-		for (let i = 0; i < numStr.length; i++) {
-			sum *= parseInt(numStr[i]);
+// 	if (numStr.length <= 1) {
+// 		return count;
+// 		count = 0;
+// 	} else {
+// 		for (let i = 0; i < numStr.length; i++) {
+// 			sum *= parseInt(numStr[i]);
+// 		}
+// 		count++;
+// 		return persistence(sum);
+// 	}
+// 	return count;
+// }
+
+// persistence(25);
+
+// CODEWARS PRACTICE - 11/03/20
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
+
+// Examples
+// [2, 4, 0, 100, 4, 11, 2602, 36]
+// Should return: 11 (the only odd number)
+
+// [160, 3, 1719, 19, 11, 13, -21]
+// Should return: 160 (the only even number)
+
+//  ***** SOLUTION *****
+
+function findOutlier(integers) {
+	newArrEven = [];
+	newArrOdd = [];
+	for (let i = 0; i < integers.length; i++) {
+		if (integers[i] % 2 === 0) {
+			newArrEven.push(integers[i]);
+		} else {
+			newArrOdd.push(integers[i]);
 		}
-		count++;
-		return persistence(sum);
 	}
-	return count;
+	if (newArrEven.length < 2) {
+		return parseInt([...newArrEven].join(''));
+	} else {
+		return parseInt([...newArrOdd].join(''));
+	}
 }
 
-persistence(25);
+findOutlier([160, 3, 1719, 19, 11, 13, -21]);
