@@ -952,6 +952,10 @@
 
 // persistence(25);
 
+
+
+
+// ______________________________________________________________________________________________________________________________________
 // CODEWARS PRACTICE - 11/03/20
 // You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
 
@@ -964,21 +968,58 @@
 
 //  ***** SOLUTION *****
 
-function findOutlier(integers) {
-	newArrEven = [];
-	newArrOdd = [];
-	for (let i = 0; i < integers.length; i++) {
-		if (integers[i] % 2 === 0) {
-			newArrEven.push(integers[i]);
-		} else {
-			newArrOdd.push(integers[i]);
+// function findOutlier(integers) {
+// 	newArrEven = [];
+// 	newArrOdd = [];
+// 	for (let i = 0; i < integers.length; i++) {
+// 		if (integers[i] % 2 === 0) {
+// 			newArrEven.push(integers[i]);
+// 		} else {
+// 			newArrOdd.push(integers[i]);
+// 		}
+// 	}
+// 	if (newArrEven.length < 2) {
+// 		return parseInt([...newArrEven].join(''));
+// 	} else {
+// 		return parseInt([...newArrOdd].join(''));
+// 	}
+// }
+
+// findOutlier([160, 3, 1719, 19, 11, 13, -21]);
+
+
+
+// ____________________________________________________________________________________________________________________________-
+
+// CODEWARS PRACTICE - 11/04/20
+// Count the number of Duplicates
+// Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+
+// Example
+// "abcde" -> 0 # no characters repeats more than once
+// "aabbcde" -> 2 # 'a' and 'b'
+// "aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+// "indivisibility" -> 1 # 'i' occurs six times
+// "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+// "aA11" -> 2 # 'a' and '1'
+// "ABBA" -> 2 # 'A' and 'B' each occur twice
+
+
+// *****SOLUTION*****
+function duplicateCount(text) {
+	let newArr = text.toUpperCase().split("")
+	let arrOne = [];
+	let arrTwo=[];
+
+	for(let i = 0; i < newArr.length; i++){
+		if(arrOne.indexOf(newArr[i]) === -1){
+			arrOne.push(newArr[i])
+		} else if( arrTwo.indexOf(newArr[i]) === -1) {
+			arrTwo.push(newArr[i])
 		}
 	}
-	if (newArrEven.length < 2) {
-		return parseInt([...newArrEven].join(''));
-	} else {
-		return parseInt([...newArrOdd].join(''));
-	}
+	return arrTwo.length;
 }
 
-findOutlier([160, 3, 1719, 19, 11, 13, -21]);
+
+duplicateCount('Indivisibilities');
