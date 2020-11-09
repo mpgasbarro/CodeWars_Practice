@@ -952,9 +952,6 @@
 
 // persistence(25);
 
-
-
-
 // ______________________________________________________________________________________________________________________________________
 // CODEWARS PRACTICE - 11/03/20
 // You are given an array (which will have a length of at least 3, but could be very large) containing integers. The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N. Write a method that takes the array as an argument and returns this "outlier" N.
@@ -987,8 +984,6 @@
 
 // findOutlier([160, 3, 1719, 19, 11, 13, -21]);
 
-
-
 // ____________________________________________________________________________________________________________________________-
 
 // CODEWARS PRACTICE - 11/04/20
@@ -1003,7 +998,6 @@
 // "Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
-
 
 // *****SOLUTION*****
 // function duplicateCount(text) {
@@ -1021,9 +1015,7 @@
 // 	return arrTwo.length;
 // }
 
-
 // duplicateCount('Indivisibilities');
-
 
 // __________________________________________________________________
 
@@ -1039,20 +1031,59 @@
 // likes ["Alex", "Jacob", "Mark", "Max"] -- must be "Alex, Jacob and 2 others like this"
 
 // *****SOLUTION*****
-function likes(names) {
-	let name = names.length - 2;
+// function likes(names) {
+// 	let name = names.length - 2;
 
-	if (names.length < 1) {
-		return 'no one likes this';
-	} else if (names.length <= 1) {
-		return names[0] + ' likes this';
-	} else if (names.length == 2) {
-		return names[0] + ' and ' + names[1] + ' like this';
-	} else if (names.length == 3) {
-		return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this';
-	} else {
-		return (names[0] + ', ' + names[1] + ' and ' + name + ' others like this')
+// 	if (names.length < 1) {
+// 		return 'no one likes this';
+// 	} else if (names.length <= 1) {
+// 		return names[0] + ' likes this';
+// 	} else if (names.length == 2) {
+// 		return names[0] + ' and ' + names[1] + ' like this';
+// 	} else if (names.length == 3) {
+// 		return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this';
+// 	} else {
+// 		return (names[0] + ', ' + names[1] + ' and ' + name + ' others like this')
+// 	}
+// }
+
+// console.log(likes(["peter", "bob", "mike", "john", "john"]))
+
+//
+// function reverseWordsInSentence(sentence){
+// 	let newArr = sentence.split(" ").reverse().join(" ")
+// 	return newArr;
+// }
+
+// function reverseLettersInWords(sentence){
+// 	let newArr = sentence.split(" ");
+// 	let newSentence = [];
+// 	for (let i=0; i < newArr.length; i++){
+// 			newSentence.push(newArr[i].split("").reverse().join(""))
+
+// 	}
+// 	return newSentence.join(" ");
+// }
+
+// console.log(reverseLettersInWords("The quick brown fox jumps over the lazy dog"));
+// // dog lazy the over jumps fox brown quick The
+
+// _____________________________________________________________________
+// CODEWARS PRACTICE  11/06/20
+// Move the first letter of each word to the end of it, then add "ay" to the end of the word. Leave punctuation marks untouched.
+
+// Examples
+// pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
+// pigIt('Hello world !');     // elloHay orldway !
+
+// ***** SOLUTION *****
+function pigIt(str) {
+	let newArr = str.split(' ');
+	let valOfInd = '';
+	for (let i = 0; i < newArr.length; i++) {
+		newArr[i].charAt(0);
 	}
+	console.log(newArr);
 }
 
-console.log(likes(["peter", "bob", "mike", "john", "john"]))
+pigIt('Pig latin is cool');
