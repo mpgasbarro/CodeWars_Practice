@@ -1118,3 +1118,42 @@
 // }
 
 // console.log(isValidWalk(['e', 'e', 'w', 'e', 'w', 'e', 'w', 'e', 'w', 'w']))
+
+// ___________________________________________________________________________________
+
+// CODEWARS - 11/10/20
+// Given a number, return a string with dash'-'marks before and after each odd integer, but do not begin or end the string with a dash mark.
+
+// Ex:
+
+// dashatize(274) -> '2-7-4'
+// dashatize(6815) -> '68-1-5'
+
+function dashatize(num) {
+	if (isNaN(num)) {
+		return 'NaN';
+	}
+	let posNum = Math.abs(num);
+	let newNum = posNum.toString().split('');
+	let evenArr = [newNum[0]];
+
+	if (newNum.length == 1) {
+		return newNum.join('');
+	}
+
+	for (let i = 1; i < newNum.length; i++) {
+		if (parseInt(newNum[i]) % 2 === 0) {
+			evenArr.push(newNum[i]);
+		} else if (
+			parseInt(newNum[i]) % 2 !== 0 &&
+			parseInt(newNum[i + 1]) % 2 === 0
+		) {
+			evenArr.push('-' + newNum[i] + '-');
+		} else {
+			evenArr.push('-' + newNum[i]);
+		}
+	}
+	return evenArr.join('');
+}
+
+console.log(dashatize(70));
