@@ -999,8 +999,6 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-
-
 // *****SOLUTION*****
 // function duplicateCount(text) {
 // 	let newArr = text.toUpperCase().split("")
@@ -1131,8 +1129,6 @@
 // dashatize(274) -> '2-7-4'
 // dashatize(6815) -> '68-1-5'
 
-
-
 // 	if (newNum.length == 1) {
 // 		return newNum.join('');
 // 	}
@@ -1154,7 +1150,6 @@
 
 // console.log(dashatize(70));
 
-
 // ________________________________________________________________________
 
 // CODEWARS - 11/13/20
@@ -1163,8 +1158,6 @@
 // For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
 
 // Note: The function accepts an integer and returns an integer
-
-
 
 // ***** SOLUTION *****
 // function squareDigits(num){
@@ -1179,5 +1172,4 @@
 // };
 
 // squareDigits(9119);
-hi
-console.log("hi");
+console.log('hello hello');
