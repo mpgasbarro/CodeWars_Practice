@@ -999,6 +999,8 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
+
+
 // *****SOLUTION*****
 // function duplicateCount(text) {
 // 	let newArr = text.toUpperCase().split("")
@@ -1129,31 +1131,53 @@
 // dashatize(274) -> '2-7-4'
 // dashatize(6815) -> '68-1-5'
 
-function dashatize(num) {
-	if (isNaN(num)) {
-		return 'NaN';
-	}
-	let posNum = Math.abs(num);
-	let newNum = posNum.toString().split('');
-	let evenArr = [newNum[0]];
 
-	if (newNum.length == 1) {
-		return newNum.join('');
-	}
 
-	for (let i = 1; i < newNum.length; i++) {
-		if (parseInt(newNum[i]) % 2 === 0) {
-			evenArr.push(newNum[i]);
-		} else if (
-			parseInt(newNum[i]) % 2 !== 0 &&
-			parseInt(newNum[i + 1]) % 2 === 0
-		) {
-			evenArr.push('-' + newNum[i] + '-');
-		} else {
-			evenArr.push('-' + newNum[i]);
-		}
-	}
-	return evenArr.join('');
-}
+// 	if (newNum.length == 1) {
+// 		return newNum.join('');
+// 	}
 
-console.log(dashatize(70));
+// 	for (let i = 1; i < newNum.length; i++) {
+// 		if (parseInt(newNum[i]) % 2 === 0) {
+// 			evenArr.push(newNum[i]);
+// 		} else if (
+// 			parseInt(newNum[i]) % 2 !== 0 &&
+// 			parseInt(newNum[i + 1]) % 2 === 0
+// 		) {
+// 			evenArr.push('-' + newNum[i] + '-');
+// 		} else {
+// 			evenArr.push('-' + newNum[i]);
+// 		}
+// 	}
+// 	return evenArr.join('');
+// }
+
+// console.log(dashatize(70));
+
+
+// ________________________________________________________________________
+
+// CODEWARS - 11/13/20
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+// Note: The function accepts an integer and returns an integer
+
+
+
+// ***** SOLUTION *****
+// function squareDigits(num){
+//    let digits= num.toString().split("");
+//    console.log(digits);
+
+//    let squaredNum = []
+//     for(let i=0; i<= digits.length; i++) {
+//         let squaredNum = num[i] * num[i]
+//     };
+//     return squaredNum;
+// };
+
+// squareDigits(9119);
+hi
+console.log("hi");
