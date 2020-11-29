@@ -1262,30 +1262,33 @@ function dirReduc(arr) {
 			east.push(arr[i]);
 		}
 	}
+	console.log(east.length);
+	console.log(west.length);
 
 	if (north.length > south.length) {
 		sum = north.length - south.length;
 		north.splice(0, sum);
+		south.splice(0, south.length);
 	} else if (south.length > north.length) {
 		sum1 = south.length - north.length;
 		south.splice(0, sum1);
+		north.splice(0, north.length);
 	} else if (
 		north.length >= 2 &&
 		south.length >= 2 &&
 		north.length === south.length
 	) {
-		console.log('hello');
 		south.splice(0, south.length);
 		north.splice(0, north.length);
 	}
 	if (west.length > east.length) {
 		sum2 = west.length - east.length;
 		west.splice(0, sum2);
-		east.splice(0, sum2);
+		east.splice(0, east.length);
 	} else if (east.length > west.length) {
 		sum3 = east.length - west.length;
 		east.splice(0, sum3);
-		west.splice(0, sum3);
+		west.splice(0, west.length);
 	} else if (
 		west.length >= 2 &&
 		east.length >= 2 &&
@@ -1298,4 +1301,6 @@ function dirReduc(arr) {
 	console.log(final);
 }
 
-dirReduc(['NORTH', 'SOUTH', 'EAST', 'WEST', 'EAST', 'WEST']);
+dirReduc(['NORTH', 'WEST', 'SOUTH', 'EAST']);
+
+// ______________________________________________________________________________________________________
