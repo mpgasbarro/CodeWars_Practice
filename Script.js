@@ -1241,66 +1241,106 @@
 // if you want to translate, please ask before translating.
 
 // ***** SOLUTION *****
-function dirReduc(arr) {
-	let north = [];
-	let south = [];
-	let east = [];
-	let west = [];
-	let sum = 0;
-	let sum1 = 0;
-	let sum2 = 0;
-	let sum3 = 0;
-	let finalArr = [];
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] === 'NORTH') {
-			north.push(arr[i]);
-		} else if (arr[i] === 'SOUTH') {
-			south.push(arr[i]);
-		} else if (arr[i] === 'WEST') {
-			west.push(arr[i]);
-		} else {
-			east.push(arr[i]);
-		}
-	}
-	console.log(east.length);
-	console.log(west.length);
+// function dirReduc(arr) {
+// 	let north = [];
+// 	let south = [];
+// 	let east = [];
+// 	let west = [];
+// 	let sum = 0;
+// 	let sum1 = 0;
+// 	let sum2 = 0;
+// 	let sum3 = 0;
+// 	let finalArr = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if (arr[i] === 'NORTH') {
+// 			north.push(arr[i]);
+// 		} else if (arr[i] === 'SOUTH') {
+// 			south.push(arr[i]);
+// 		} else if (arr[i] === 'WEST') {
+// 			west.push(arr[i]);
+// 		} else {
+// 			east.push(arr[i]);
+// 		}
+// 	}
+// 	console.log(east.length);
+// 	console.log(west.length);
 
-	if (north.length > south.length) {
-		sum = north.length - south.length;
-		north.splice(0, sum);
-		south.splice(0, south.length);
-	} else if (south.length > north.length) {
-		sum1 = south.length - north.length;
-		south.splice(0, sum1);
-		north.splice(0, north.length);
-	} else if (
-		north.length >= 2 &&
-		south.length >= 2 &&
-		north.length === south.length
-	) {
-		south.splice(0, south.length);
-		north.splice(0, north.length);
-	}
-	if (west.length > east.length) {
-		sum2 = west.length - east.length;
-		west.splice(0, sum2);
-		east.splice(0, east.length);
-	} else if (east.length > west.length) {
-		sum3 = east.length - west.length;
-		east.splice(0, sum3);
-		west.splice(0, west.length);
-	} else if (
-		west.length >= 2 &&
-		east.length >= 2 &&
-		west.length === east.length
-	) {
-		west.splice(0, west.length);
-		east.splice(0, east.length);
-	}
-	let final = [...east, ...north, ...west, ...south];
-	console.log(final);
-}
+// 	if (north.length > south.length) {
+// 		sum = north.length - south.length;
+// 		north.splice(0, sum);
+// 		south.splice(0, south.length);
+// 	} else if (south.length > north.length) {
+// 		sum1 = south.length - north.length;
+// 		south.splice(0, sum1);
+// 		north.splice(0, north.length);
+// 	} else if (
+// 		north.length >= 2 &&
+// 		south.length >= 2 &&
+// 		north.length === south.length
+// 	) {
+// 		south.splice(0, south.length);
+// 		north.splice(0, north.length);
+// 	}
+// 	if (west.length > east.length) {
+// 		sum2 = west.length - east.length;
+// 		west.splice(0, sum2);
+// 		east.splice(0, east.length);
+// 	} else if (east.length > west.length) {
+// 		sum3 = east.length - west.length;
+// 		east.splice(0, sum3);
+// 		west.splice(0, west.length);
+// 	} else if (
+// 		west.length >= 2 &&
+// 		east.length >= 2 &&
+// 		west.length === east.length
+// 	) {
+// 		west.splice(0, west.length);
+// 		east.splice(0, east.length);
+// 	}
+// 	let final = [...east, ...north, ...west, ...south];
+// 	 console.log(final);
+// }
 
-dirReduc(['NORTH', 'WEST', 'SOUTH', 'EAST']);
+// dirReduc(["NORTH", "SOUTH", "EAST", "WEST", "EAST", "WEST"]);
 
 // ______________________________________________________________________________________________________
+
+
+// CODEWARS CHALLENGE - 12/09/20
+// My friend John and I are members of the "Fat to Fit Club (FFC)". John is worried because each month a list with the weights of members is published and each month he is the last on the list which means he is the heaviest.
+
+// I am the one who establishes the list so I told him: "Don't worry any more, I will modify the order of the list". It was decided to attribute a "weight" to numbers. The weight of a number will be from now on the sum of its digits.
+
+// For example 99 will have "weight" 18, 100 will have "weight" 1 so in the list 100 will come before 99. Given a string with the weights of FFC members in normal order can you give this string ordered by "weights" of these numbers?
+
+// Example:
+// "56 65 74 100 99 68 86 180 90" ordered by numbers weights becomes: "100 180 90 56 65 74 68 86 99"
+
+// When two numbers have the same "weight", let us class them as if they were strings (alphabetical ordering) and not numbers: 100 is before 180 because its "weight" (1) is less than the one of 180 (9) and 180 is before 90 since, having the same "weight" (9), it comes before as a string.
+
+// All numbers in the list are positive numbers and the list can be empty.
+
+
+
+
+// ***** SOLUTION *****
+
+function add (a,b ){
+	return a + b
+}
+
+function orderWeight(strng) {
+	let newArr = strng.split(" ");
+	let number;
+	for(let i = 0; i < newArr.length; i++){
+		number =newArr[i].split("");
+		number.forEach(function add(number)) 
+		console.log(number);
+
+		}
+	
+	
+}
+
+
+orderWeight('56 65 74 100 99 68 86 180 90');
