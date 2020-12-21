@@ -1305,7 +1305,6 @@
 
 // ______________________________________________________________________________________________________
 
-
 // CODEWARS CHALLENGE - 12/09/20
 // My friend John and I are members of the "Fat to Fit Club (FFC)". John is worried because each month a list with the weights of members is published and each month he is the last on the list which means he is the heaviest.
 
@@ -1320,27 +1319,123 @@
 
 // All numbers in the list are positive numbers and the list can be empty.
 
-
-
-
 // ***** SOLUTION *****
 
-function add (a,b ){
-	return a + b
-}
+// function add ([a,b]){
+// 	a + b
 
-function orderWeight(strng) {
-	let newArr = strng.split(" ");
-	let number;
-	for(let i = 0; i < newArr.length; i++){
-		number =newArr[i].split("");
-		number.forEach(function add(number)) 
-		console.log(number);
+// }
 
+// function orderWeight(strng) {
+// 	let newArr = strng.split(" ");
+// 	let number;
+// 	let tempArr = [];
+// 	for(let i = 0; i < newArr.length; i++){
+// 		console.log(newArr[i]);
+// 		number =newArr[i].split("");
+// 		console.log(number);
+// 		number.forEach(x => {
+// 			tempArr.push(parseInt(x));
+// 			console.log(tempArr);
+// 		})
+
+// 		}
+
+// }
+
+// // add(["7", "8"])
+
+// orderWeight('56 65 74 100 99 68 86 180 90');
+
+// function oddNumbers(l, r) {
+//     let newArr= [];
+//     console.log(newArr)
+//     for(let i = l; i < r + 1; i++){
+//         if (i % 2 !== 0) {
+//             newArr.push(i)
+//         }
+//     } console.log(newArr)
+// }
+
+// oddNumbers(1, 5)
+
+//
+
+// function printTable(n) {
+//     let row = n;
+//     let column = n;
+//     let newArr = []
+//     for (let i = 1; i < row + 1; i++){
+//         for( let j = 1; j < column + 1; j++){
+//             if(newArr.length <= n){}
+//             newArr.push(i * j)
+//             console.log(newArr);
+//         }
+//     }
+// }
+// printTable(4)
+
+// const url = 'https://jsonmock.hackerrank.com/api/movies/search/?Title=';
+
+// fetch(url)
+// 	.then((res) => {
+// 		return res.json()
+//     })
+//     .then(res => {
+//         console.log("success", res.data);
+//         let sortedVal = res.data.map(x => x.Title)
+//         sortedVal.sort()
+//         console.log(sortedVal);
+
+//     })
+// 	.catch((err) => {
+// 		console.log('something went wrong...', err);
+//     });
+// function countingValleys(steps, path) {
+//     let down = -1;
+//     let up = 1;
+//     let sum = 0;
+//     let total = 0;
+
+//     for(let i = 0; i < path.length; i++){
+//         if(path[i] === "D"){
+//             sum += up
+//             console.log(sum);
+//         } else if(path[i] === "U") {
+//             sum -= down
+//         } else if( sum === 0){
+//             total++
+//         }
+//     console.log(total)
+//     }
+// }
+
+// countingValleys()
+
+//-----------------------------------------------
+// HackerRank Challenge - Sales by Match
+//  Alex works at a clothing store. There is a large pile of socks that must be paired by color for sale. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
+
+// For example, there are  socks with colors . There is one pair of color  and one of color . There are three odd socks left, one of each color. The number of pairs is .
+
+// ***** SOLUTION *****
+function sockMerchant(n, ar) {
+	let total = 0;
+	let newArr = {};
+	let newVal = [];
+	for (let i = 0; i < ar.length; i++) {
+		if (!newArr[ar[i]]) {
+			newArr[ar[i]] = 0;
 		}
-	
-	
+		newArr[ar[i]] = newArr[ar[i]] + 1;
+	}
+	newVal = Object.values(newArr);
+	newVal.forEach((value) => {
+		if (value > 1) {
+			total += Math.floor(value / 2);
+		}
+	});
+	return total;
 }
 
-
-orderWeight('56 65 74 100 99 68 86 180 90');
+sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
