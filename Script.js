@@ -1419,23 +1419,23 @@
 // For example, there are  socks with colors . There is one pair of color  and one of color . There are three odd socks left, one of each color. The number of pairs is .
 
 // ***** SOLUTION *****
-function sockMerchant(n, ar) {
-	let total = 0;
-	let newArr = {};
-	let newVal = [];
-	for (let i = 0; i < ar.length; i++) {
-		if (!newArr[ar[i]]) {
-			newArr[ar[i]] = 0;
-		}
-		newArr[ar[i]] = newArr[ar[i]] + 1;
-	}
-	newVal = Object.values(newArr);
-	newVal.forEach((value) => {
-		if (value > 1) {
-			total += Math.floor(value / 2);
-		}
-	});
-	return total;
-}
+// function sockMerchant(n, ar) {
+// 	let total = 0;
+// 	let newArr = {};
+// 	let newVal = [];
+// 	for (let i = 0; i < ar.length; i++) {
+// 		if (!newArr[ar[i]]) {
+// 			newArr[ar[i]] = 0;
+// 		}
+// 		newArr[ar[i]] = newArr[ar[i]] + 1;
+// 	}
+// 	newVal = Object.values(newArr);
+// 	newVal.forEach((value) => {
+// 		if (value > 1) {
+// 			total += Math.floor(value / 2);
+// 		}
+// 	});
+// 	console.log(total);
+// }
 
-sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
+// sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
