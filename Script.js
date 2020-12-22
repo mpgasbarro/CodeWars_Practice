@@ -1439,3 +1439,30 @@
 // }
 
 // sockMerchant(9, [10, 20, 20, 10, 10, 30, 50, 10, 20]);
+
+// HACKERRANK - Jumping on the Clouds - 12/22/20
+// There is a new mobile game that starts with consecutively numbered clouds. Some of the clouds are thunderheads and others are cumulus. The player can jump on any cumulus cloud having a number that is equal to the number of the current cloud plus  or . The player must avoid the thunderheads. Determine the minimum number of jumps it will take to jump from the starting postion to the last cloud. It is always possible to win the game.
+
+// For each game, you will get an array of clouds numbered  if they are safe or  if they must be avoided.
+
+// Example
+
+// Index the array from . The number on each cloud is its index in the list so the player must avoid the clouds at indices  and . They could follow these two paths:  or . The first path takes  jumps while the second takes . Return .
+
+function jumpingOnClouds(c) {
+	var count = 0;
+	for (var i = 0; i < c.length; i++) {
+		if (c[i] === 0) {
+			if (c[i] === c[i + 1]) {
+				count++;
+				i++;
+			}
+		} else {
+			count++;
+		}
+	}
+
+	return count;
+}
+
+jumpingOnClouds([0, 0, 0, 1, 0, 0]);
