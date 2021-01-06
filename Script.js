@@ -1467,12 +1467,10 @@
 
 // jumpingOnClouds([0, 0, 0, 1, 0, 0]);
 
-
 // HACKERRANK CHALLENGE - 12/23/20 - Repeated String
 // There is a string, , of lowercase English letters that is repeated infinitely many times. Given an integer, , find and print the number of letter a's in the first  letters of the infinite string.
 
 // Example
-
 
 // The substring we consider is , the first  characters of the infinite string. There are  occurrences of a in the substring.
 
@@ -1486,23 +1484,42 @@
 // n: the number of characters to consider
 
 // ***** SOLUTION *****
-function repeatedString(s, n) {
-	let count= 0
-	if(s === 'a'){
-		count = n
-		console.log(count)
+// function repeatedString(s, n) {
+// 	let count= 0
+// 	if(s === 'a'){
+// 		count = n
+// 		console.log(count)
+// 	}
+// 	let length = Math.ceil(n / s.length)
+// 	let newStr = s.repeat(length)
+// 	let arr = newStr.split("")
+// 	let newArr = arr.splice(n, arr.length - n )
+// 	arr.forEach((x) => {if(x === "a"){
+// 		count++
+// 	}})
+// 	console.log(count);
+// }
+
+// repeatedString(
+// 	'aba',
+// 	10
+// );
+// __________________________________________________
+// Find two numbers in a sorted array that sum to a target
+function two_sum(arr, target) {
+	let left = 0;
+	let right = arr.length - 1;
+	let total = 0;
+	while (left < right && total != target) {
+		let total = arr[left] + arr[right];
+		if (total < target) {
+			left += 1;
+		} else if (total > target) {
+			right -= 1;
+		} else {
+			return [left, right];
+		}
 	}
-	let length = Math.ceil(n / s.length)
-	let newStr = s.repeat(length)
-	let arr = newStr.split("")
-	let newArr = arr.splice(n, arr.length - n )
-	arr.forEach((x) => {if(x === "a"){
-		count++
-	}})
-	console.log(count);
 }
 
-repeatedString(
-	'aba',
-	10
-);
+console.log(two_sum([-1, 1, 2, 3, 5], 5));
