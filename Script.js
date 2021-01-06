@@ -1506,20 +1506,63 @@
 // );
 // __________________________________________________
 // Find two numbers in a sorted array that sum to a target
-function two_sum(arr, target) {
-	let left = 0;
-	let right = arr.length - 1;
-	let total = 0;
-	while (left < right && total != target) {
-		let total = arr[left] + arr[right];
-		if (total < target) {
-			left += 1;
-		} else if (total > target) {
-			right -= 1;
-		} else {
-			return [left, right];
+// function two_sum(arr, target) {
+// 	let left = 0;
+// 	let right = arr.length - 1;
+// 	let total = 0;
+// 	while (left < right && total != target) {
+// 		let total = arr[left] + arr[right];
+// 		if (total < target) {
+// 			left += 1;
+// 		} else if (total > target) {
+// 			right -= 1;
+// 		} else {
+// 			return [left, right];
+// 		}
+// 	}
+// }
+
+// console.log(two_sum([-1, 1, 2, 3, 5], 5));
+// ________________________________________________________________-
+
+//  Given a sorted array and a target, return the indices of three values that sum up to the target.
+// Assume there is only 1 possible answer.
+// Return [-1,-1,-1] if three indices that sum to the target do not exist.
+
+// function three_sum(arr, target){
+// 	for(let i=0; i< arr.length; i++){
+// 		let left = i + 1;
+// 		let right = arr.length - 1;
+// 		let total = 0;
+// 		while(left < right){
+// 			total = arr[left] + arr[right] + arr[i]
+// 			if(total < target){
+// 				left ++
+// 			} else if ( total > target){
+// 				right --
+// 			} else {
+// 				return[i, left, right]
+// 			}
+// 		}
+// 	}
+// }
+
+function threeSum(arr, target) {
+	for (let i = 0; i < arr.length; i++) {
+		var left = i + 1;
+		var right = arr.length - 1;
+		while (left < right) {
+			var curr = arr[i] + arr[left] + arr[right];
+			if (curr < target) {
+				left++;
+			} else if (curr > target) {
+				right--;
+			} else {
+				return [arr[i], arr[left], arr[right]];
+			}
 		}
 	}
+	return [-1, -1, -1];
 }
 
-console.log(two_sum([-1, 1, 2, 3, 5], 5));
+console.log(threeSum([1, 2, 4, 5, 12], 19));
