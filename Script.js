@@ -1449,20 +1449,60 @@
 
 // Index the array from . The number on each cloud is its index in the list so the player must avoid the clouds at indices  and . They could follow these two paths:  or . The first path takes  jumps while the second takes . Return .
 
-function jumpingOnClouds(c) {
-	var count = 0;
-	for (var i = 0; i < c.length; i++) {
-		if (c[i] === 0) {
-			if (c[i] === c[i + 1]) {
-				count++;
-				i++;
-			}
-		} else {
-			count++;
-		}
-	}
+// function jumpingOnClouds(c) {
+// 	var count = 0;
+// 	for (var i = 0; i < c.length; i++) {
+// 		if (c[i] === 0) {
+// 			if (c[i] === c[i + 1]) {
+// 				count++;
+// 				i++;
+// 			}
+// 		} else {
+// 			count++;
+// 		}
+// 	}
 
-	return count;
+// 	return count;
+// }
+
+// jumpingOnClouds([0, 0, 0, 1, 0, 0]);
+
+
+// HACKERRANK CHALLENGE - 12/23/20 - Repeated String
+// There is a string, , of lowercase English letters that is repeated infinitely many times. Given an integer, , find and print the number of letter a's in the first  letters of the infinite string.
+
+// Example
+
+
+// The substring we consider is , the first  characters of the infinite string. There are  occurrences of a in the substring.
+
+// Function Description
+
+// Complete the repeatedString function in the editor below.
+
+// repeatedString has the following parameter(s):
+
+// s: a string to repeat
+// n: the number of characters to consider
+
+// ***** SOLUTION *****
+function repeatedString(s, n) {
+	let count= 0
+	if(s === 'a'){
+		count = n
+		console.log(count)
+	}
+	let length = Math.ceil(n / s.length)
+	let newStr = s.repeat(length)
+	let arr = newStr.split("")
+	let newArr = arr.splice(n, arr.length - n )
+	arr.forEach((x) => {if(x === "a"){
+		count++
+	}})
+	console.log(count);
 }
 
-jumpingOnClouds([0, 0, 0, 1, 0, 0]);
+repeatedString(
+	'aba',
+	10
+);
