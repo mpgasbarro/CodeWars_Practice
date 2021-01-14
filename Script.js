@@ -1631,23 +1631,57 @@
 
 // FIND THREE NUMBERS IN A SORTED ARRAY THAT SUM TO A TARGET. PRACTICING AGAIN
 
-function findThreeSum(arr, target) {
-	for (let i = 0; i < arr.length; i++) {
-		let left = i + 1;
-		let right = arr.length - 1;
-		let total = 0;
+// function findThreeSum(arr, target) {
+// 	for (let i = 0; i < arr.length; i++) {
+// 		let left = i + 1;
+// 		let right = arr.length - 1;
+// 		let total = 0;
 
-		while (left < right && total != target) {
-			total = arr[i] + arr[left] + arr[right];
-			if (total < target) {
-				left++;
-			} else if (total > target) {
-				right--;
-			} else {
-				return [arr[i], arr[left], arr[right]];
-			}
-		}
-	}
-}
+// 		while (left < right && total != target) {
+// 			total = arr[i] + arr[left] + arr[right];
+// 			if (total < target) {
+// 				left++;
+// 			} else if (total > target) {
+// 				right--;
+// 			} else {
+// 				return [arr[i], arr[left], arr[right]];
+// 			}
+// 		}
+// 	}
+// }
 
-console.log(findThreeSum([1, 2, 3, 5, 12], 19));
+// console.log(findThreeSum([1, 2, 3, 5, 12], 19));
+
+// function hourGlassSumz(arr) {
+// 	let length = 4;
+// 	let height = 4;
+// 	let total = -63;
+// 	let sum = 0;
+
+// 	for (let i = 0; i < length; i++) {
+// 		for (let j = 0; j < height; j++) {
+// 			sum =
+// 				arr[i][j] +
+// 				arr[i][j + 1] +
+// 				arr[i][j + 2] +
+// 				arr[i + 1][j + 1] +
+// 				arr[i + 2][j] +
+// 				arr[i + 2][j + 1] +
+// 				arr[i + 2][j + 2];
+
+// 			if (sum > total) {
+// 				total = sum;
+// 			}
+// 		}
+// 	}
+// 	console.log(total);
+// }
+
+// hourGlassSumz([
+// 	[1, 1, 1, 0, 0, 0],
+// 	[0, 1, 0, 0, 0, 0],
+// 	[1, 1, 1, 0, 0, 0],
+// 	[0, 0, 2, 4, 4, 0],
+// 	[0, 0, 0, 2, 0, 0],
+// 	[0, 0, 1, 2, 4, 0],
+// ]);
