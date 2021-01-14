@@ -1612,19 +1612,42 @@
 // _________________________________________
 // FIND TWO NUMBERS IN A SORTED ARRAY THAT SUM TO A TARGET. PRACTICING AGAIN
 
-function findSum(arr, target) {
-	let left = 0;
-	let right = arr.length - 1;
+// function findSum(arr, target) {
+// 	let left = 0;
+// 	let right = arr.length - 1;
 
-	while (left < right) {
-		if (arr[left] + arr[right] < target) {
-			left++;
-		} else if (arr[left] + arr[right] > target) {
-			right--;
-		} else {
-			return [arr[left], arr[right]];
+// 	while (left < right) {
+// 		if (arr[left] + arr[right] < target) {
+// 			left++;
+// 		} else if (arr[left] + arr[right] > target) {
+// 			right--;
+// 		} else {
+// 			return [arr[left], arr[right]];
+// 		}
+// 	}
+// }
+
+// console.log(findSum([1, 2, 3, 5, 12], 19));
+
+// FIND THREE NUMBERS IN A SORTED ARRAY THAT SUM TO A TARGET. PRACTICING AGAIN
+
+function findThreeSum(arr, target) {
+	for (let i = 0; i < arr.length; i++) {
+		let left = i + 1;
+		let right = arr.length - 1;
+		let total = 0;
+
+		while (left < right && total != target) {
+			total = arr[i] + arr[left] + arr[right];
+			if (total < target) {
+				left++;
+			} else if (total > target) {
+				right--;
+			} else {
+				return [arr[i], arr[left], arr[right]];
+			}
 		}
 	}
 }
 
-console.log(findSum([-1, -3, 2, 3, 5], 5));
+console.log(findThreeSum([1, 2, 3, 5, 12], 19));
