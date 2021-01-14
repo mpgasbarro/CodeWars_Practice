@@ -1627,4 +1627,4 @@ function findSum(arr, target) {
 	}
 }
 
-console.log(findSum([-1, 1, 2, 3, 5], 5));
+console.log(findSum([-1, -3, 2, 3, 5], 5));
