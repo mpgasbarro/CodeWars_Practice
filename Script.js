@@ -1685,3 +1685,57 @@
 // 	[0, 0, 0, 2, 0, 0],
 // 	[0, 0, 1, 2, 4, 0],
 // ]);
+
+// ___________________________________________________________
+// 01/14/21 - HackerRank Challenge - Arrays - Left Rotation
+// A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, if  left rotations are performed on array , then the array would become . Note that the lowest index item moves to the highest index in a rotation. This is called a circular array.
+
+// Given an array  of  integers and a number, , perform  left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
+
+// function rotLeft(a, d) {
+// 	let move = a - d
+// 	let newArr = []
+
+// 	for(let i = 1; i < a + 1; i--){
+// 		newArr.push(i)
+// 	}
+
+// }
+
+// rotLeft(5, 4)
+
+//__________________________________________________________
+// HACKERRANK CHALLENGE 2/2/21
+// COUNTING VALLEYS...AGAIN
+// An avid hiker keeps meticulous records of their hikes. During the last hike that took exactly  steps, for every step it was noted if it was an uphill, , or a downhill,  step. Hikes always start and end at sea level, and each step up or down represents a  unit change in altitude. We define the following terms:
+
+// A mountain is a sequence of consecutive steps above sea level, starting with a step up from sea level and ending with a step down to sea level.
+// A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+// Given the sequence of up and down steps during a hike, find and print the number of valleys walked through.
+
+// convert string into array
+// loop through Array
+
+function countingValleys(steps, path) {
+	let newPath = path.split('');
+	console.log(newPath);
+	let up = 0;
+	let down = 0;
+	let total = 0;
+	let valleys = 0;
+
+	for (let i = 0; i < newPath.length; i++) {
+		if (newPath[i] === 'U') {
+			total++;
+		} else if (newPath[i] === 'D') {
+			total--;
+		}
+
+		if (newPath[i] === 'U' && total === 0) {
+			valleys++;
+		}
+	}
+	return valleys;
+}
+
+countingValleys(8, 'DDUUDDUDUUUD');
