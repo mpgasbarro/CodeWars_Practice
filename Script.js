@@ -1,5 +1,9 @@
 // MERGE SORT FUNCTION
 
+const { useDebugValue } = require('react');
+
+// const { arrayOf } = require('prop-types');
+
 // let newArr = [4, 7, 3, 8, 2, 1, 9, 6];
 // function mergeSort(arr) {
 // 	// YOUR CODE HERE
@@ -1716,26 +1720,101 @@
 // convert string into array
 // loop through Array
 
-function countingValleys(steps, path) {
-	let newPath = path.split('');
-	console.log(newPath);
-	let up = 0;
-	let down = 0;
-	let total = 0;
-	let valleys = 0;
+// function countingValleys(steps, path) {
+// 	let newPath = path.split('');
+// 	console.log(newPath);
+// 	let up = 0;
+// 	let down = 0;
+// 	let total = 0;
+// 	let valleys = 0;
 
-	for (let i = 0; i < newPath.length; i++) {
-		if (newPath[i] === 'U') {
-			total++;
-		} else if (newPath[i] === 'D') {
-			total--;
-		}
+// 	for (let i = 0; i < newPath.length; i++) {
+// 		if (newPath[i] === 'U') {
+// 			total++;
+// 		} else if (newPath[i] === 'D') {
+// 			total--;
+// 		}
 
-		if (newPath[i] === 'U' && total === 0) {
-			valleys++;
+// 		if (newPath[i] === 'U' && total === 0) {
+// 			valleys++;
+// 		}
+// 	}
+// 	return valleys;
+// }
+
+// countingValleys(8, 'DDUUDDUDUUUD');
+
+// _______________________________________________________-
+// Hacker rank challenge - jumping clouds...solving, AGAIN
+// Arrays: Left Rotation
+// A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, if  left rotations are performed on array , then the array would become . Note that the lowest index item moves to the highest index in a rotation. This is called a circular array.
+
+// Given an array  of  integers and a number, , perform  left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
+
+// Function Description
+
+// Complete the function rotLeft in the editor below.
+
+// rotLeft has the following parameter(s):
+
+// int a[n]: the array to rotate
+// // int d: the number of rotations
+// function rotLeft(a, d) {
+// 	let arr = [];
+// 	let newArr = [];
+// 	let index = 0;
+
+// 	for (let i = 1; i <= a; i++) {
+// 		arr.push(i);
+// 	}
+// 	for (let i = a - 1; i >= 0; i--) {
+// 		let index = d - i;
+// 		console.log(`${index} and  ${arr[i]}`);
+// 		newArr.splice(index, 0, arr[i]);
+// 		console.log(newArr);
+// 	}
+// 	console.log(newArr);
+// }
+
+// rotLeft(5, 2);
+
+function insertionSort(items) {
+	for (var i = 0; i < items.length; i++) {
+		let value = items[i];
+		// store the current item value so it can be placed right
+		for (var j = i - 1; j > -1 && items[j] > value; j--) {
+			// loop through the items in the sorted array (the items from the current to the beginning)
+			// copy each item to the next one
+			items[j + 1] = items[j];
 		}
+		// the last item we've reached should now hold the value of the currently sorted item
+		items[j + 1] = value;
 	}
-	return valleys;
+
+	return items;
 }
 
-countingValleys(8, 'DDUUDDUDUUUD');
+const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
+console.log(insertionSort(list));
+
+// function insertion(items) {
+//     for(let i= 0; i < items.length; i++){
+//         let value = items[i]
+//         for(let j = i - 1; j > -1 && items[j] > value; j--){
+//             items[j + 1] = items[j]
+//         }
+//         items[j + 1] = value
+//     }
+
+// }
+
+function insert(items) {
+	for (let i = 0; i < items.length; i++) {
+		value = items[i];
+		for (let j = i - 1; j > -1 && items[j] < value; j--) {
+			items[j + 1] = items[j];
+		}
+		items[j + 1] = value;
+	}
+	return items;
+}
