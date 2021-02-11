@@ -1,6 +1,6 @@
 // MERGE SORT FUNCTION
 
-const { useDebugValue } = require('react');
+// const { useDebugValue } = require('react');
 
 // const { arrayOf } = require('prop-types');
 
@@ -1778,24 +1778,8 @@ const { useDebugValue } = require('react');
 
 // rotLeft(5, 2);
 
-function insertionSort(items) {
-	for (var i = 0; i < items.length; i++) {
-		let value = items[i];
-		// store the current item value so it can be placed right
-		for (var j = i - 1; j > -1 && items[j] > value; j--) {
-			// loop through the items in the sorted array (the items from the current to the beginning)
-			// copy each item to the next one
-			items[j + 1] = items[j];
-		}
-		// the last item we've reached should now hold the value of the currently sorted item
-		items[j + 1] = value;
-	}
-
-	return items;
-}
-
-const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
-console.log(insertionSort(list));
+// const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
+// console.log(insertionSort(list));
 
 // function insertion(items) {
 //     for(let i= 0; i < items.length; i++){
@@ -1808,13 +1792,74 @@ console.log(insertionSort(list));
 
 // }
 
-function insert(items) {
+// function insertion(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		let value = items[i];
+// 		for (let j = i - 1; j > -1 && items[j] > value; j--) {
+// 			items[j + 1] = items[j];
+// 		}
+// 		items[ j + 1] = value;
+// 	}
+// 	return items;
+// }
+
+// function insertionSort(items) {
+// 	for (var i = 0; i < items.length; i++) {
+// 		let value = items[i];
+// 		// store the current item value so it can be placed right
+// 		for (var j = i - 1; j > -1 && items[j] > value; j--) {
+// 			// loop through the items in the sorted array (the items from the current to the beginning)
+// 			// copy each item to the next one
+// 			items[j + 1] = items[j];
+// 		}
+// 		// the last item we've reached should now hold the value of the currently sorted item
+// 		items[j + 1] = value;
+// 	}
+
+// 	return items;
+// }
+
+// function insertionSort(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		let value = items[i];
+// 		for (var j = i - 1; j > -1 && items[j] > value; j--) {
+// 			// loop through the items in the sorted array (the items from the current to the beginning)
+// 			// copy each item to the next one
+// 			items[j + 1] = items[j];
+// 		}
+// 		// the last item we've reached should now hold the value of the currently sorted item
+// 		items[j + 1] = value;
+// 	}
+
+// 	return items;
+// }
+
+const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
+console.log(insertionSort(list));
+
+// INSERTION SORT
+function insertionSort(items) {
 	for (let i = 0; i < items.length; i++) {
-		value = items[i];
-		for (let j = i - 1; j > -1 && items[j] < value; j--) {
+		let value = items[i];
+		for (var j = i - 1; j > -1 && items[j] > value; j--) {
 			items[j + 1] = items[j];
 		}
 		items[j + 1] = value;
 	}
 	return items;
 }
+
+// BUBBLE SORT
+let bubbleSort = (inputArr) => {
+	let len = inputArr.length;
+	for (let i = 0; i < len; i++) {
+		for (let j = 0; j < len; j++) {
+			if (inputArr[j] > inputArr[j + 1]) {
+				let tmp = inputArr[j];
+				inputArr[j] = inputArr[j + 1];
+				inputArr[j + 1] = tmp;
+			}
+		}
+	}
+	return inputArr;
+};
