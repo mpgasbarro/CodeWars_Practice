@@ -1834,32 +1834,104 @@
 // 	return items;
 // }
 
-const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
-console.log(insertionSort(list));
+// const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
+// console.log(insertionSort(list));
 
-// INSERTION SORT
-function insertionSort(items) {
-	for (let i = 0; i < items.length; i++) {
-		let value = items[i];
-		for (var j = i - 1; j > -1 && items[j] > value; j--) {
-			items[j + 1] = items[j];
-		}
-		items[j + 1] = value;
-	}
-	return items;
-}
+// // INSERTION SORT
+// function insertionSort(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		let value = items[i];
+// 		for (var j = i - 1; j > -1 && items[j] > value; j--) {
+// 			items[j + 1] = items[j];
+// 		}
+// 		items[j + 1] = value;
+// 	}
+// 	return items;
+// }
 
 // BUBBLE SORT
-let bubbleSort = (inputArr) => {
-	let len = inputArr.length;
-	for (let i = 0; i < len; i++) {
-		for (let j = 0; j < len; j++) {
-			if (inputArr[j] > inputArr[j + 1]) {
-				let tmp = inputArr[j];
-				inputArr[j] = inputArr[j + 1];
-				inputArr[j + 1] = tmp;
+// let bubbleSort = (inputArr) => {
+// 	let len = inputArr.length;
+// 	for (let i = 0; i < len; i++) {
+// 		for (let j = 0; j < len; j++) {
+// 			if (inputArr[j] > inputArr[j + 1]) {
+// 				let tmp = inputArr[j];
+// 				inputArr[j] = inputArr[j + 1];
+// 				inputArr[j + 1] = tmp;
+// 			}
+// 		}
+// 	}
+// 	return inputArr;
+// };
+
+// function bubbleSort(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		for (let j = 0; j < items.length; j++) {
+// 			if (items[j] > items[j + 1]) {
+// 				let bubble = items[j];
+// 				items[j] = items[j + 1];
+// 				items[j + 1] = bubble;
+// 			}
+// 		}
+// 	}
+// 	return bubble;
+// }
+
+// function newBubble(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		for (let j = 0; j < items.length; j++) {
+// 			if (items[j] > items[j + 1]) {
+// 				let bubble = items[j];
+// 				items[j] = items[j + 1];
+// 				items[j + 1] = bubble;
+// 			}
+// 		}
+// 	}
+// 	return bubble;
+// }
+
+// console.log(newBubblet([54, 26, 93, 17, 77, 31, 44, 55, 20]));
+
+// _____________________________________________________
+// HACKER RANK 2D array again
+// Given a  2D Array, :
+
+// An hourglass in  is a subset of values with indices falling in this pattern in 's graphical representation:
+
+// a b c
+//   d
+// e f g
+// There are  hourglasses in . An hourglass sum is the sum of an hourglass' values. Calculate the hourglass sum for every hourglass in , then print the maximum hourglass sum. The array will always be .
+
+// Need a variable to kepe track of which hourglass is the largest sum
+// Will need to to do two for loops, to get multiple values within arrays
+
+function hourGlassSumz(arr) {
+	let sum = -63;
+	let compairedSum = 0;
+	for (let i = 0; i < 4; i++) {
+		for (let j = 0; j < 4; j++) {
+			compairedSum =
+				arr[i][j] +
+				arr[i][j + 1] +
+				arr[i][j + 2] +
+				arr[i + 1][j + 1] +
+				arr[i + 2][j] +
+				arr[i + 2][j + 1] +
+				arr[i + 2][j + 2];
+			if (compairedSum > sum) {
+				sum = compairedSum;
 			}
 		}
 	}
-	return inputArr;
-};
+	return sum;
+}
+
+hourGlassSumz([
+	[1, 1, 1, 0, 0, 0],
+	[0, 1, 0, 0, 0, 0],
+	[1, 1, 1, 0, 0, 0],
+	[0, 0, 2, 4, 4, 0],
+	[0, 0, 0, 2, 0, 0],
+	[0, 0, 1, 2, 4, 0],
+]);
