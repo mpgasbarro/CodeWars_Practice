@@ -1906,32 +1906,57 @@
 // Need a variable to kepe track of which hourglass is the largest sum
 // Will need to to do two for loops, to get multiple values within arrays
 
-function hourGlassSumz(arr) {
-	let sum = -63;
-	let compairedSum = 0;
-	for (let i = 0; i < 4; i++) {
-		for (let j = 0; j < 4; j++) {
-			compairedSum =
-				arr[i][j] +
-				arr[i][j + 1] +
-				arr[i][j + 2] +
-				arr[i + 1][j + 1] +
-				arr[i + 2][j] +
-				arr[i + 2][j + 1] +
-				arr[i + 2][j + 2];
-			if (compairedSum > sum) {
-				sum = compairedSum;
-			}
-		}
-	}
-	return sum;
-}
+// function hourGlassSumz(arr) {
+// 	let sum = -63;
+// 	let compairedSum = 0;
+// 	for (let i = 0; i < 4; i++) {
+// 		for (let j = 0; j < 4; j++) {
+// 			compairedSum =
+// 				arr[i][j] +
+// 				arr[i][j + 1] +
+// 				arr[i][j + 2] +
+// 				arr[i + 1][j + 1] +
+// 				arr[i + 2][j] +
+// 				arr[i + 2][j + 1] +
+// 				arr[i + 2][j + 2];
+// 			if (compairedSum > sum) {
+// 				sum = compairedSum;
+// 			}
+// 		}
+// 	}
+// 	return sum;
+// }
 
-hourGlassSumz([
-	[1, 1, 1, 0, 0, 0],
-	[0, 1, 0, 0, 0, 0],
-	[1, 1, 1, 0, 0, 0],
-	[0, 0, 2, 4, 4, 0],
-	[0, 0, 0, 2, 0, 0],
-	[0, 0, 1, 2, 4, 0],
-]);
+// hourGlassSumz([
+// 	[1, 1, 1, 0, 0, 0],
+// 	[0, 1, 0, 0, 0, 0],
+// 	[1, 1, 1, 0, 0, 0],
+// 	[0, 0, 2, 4, 4, 0],
+// 	[0, 0, 0, 2, 0, 0],
+// 	[0, 0, 1, 2, 4, 0],
+// ]);
+
+// ___________________________________________________________________
+// // HackerRank - Mini-Max Sum
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+// Example
+// The minimum sum is  and the maximum sum is . The function prints
+// 16 24
+
+// function miniMaxSum(arr) {
+// 	let smallVal = 0;
+// 	let largeVal = 0;
+// 	let newArr = arr.sort(function (a, b) {
+// 		return a - b;
+// 	});
+
+// 	for (let i = 0; i < arr.length - 1; i++) {
+// 		smallVal += arr[i];
+// 	}
+// 	for (let i = 1; i < arr.length; i++) {
+// 		largeVal += arr[i];
+// 	}
+// 	return([smallVal, largeVal]);
+// }
+
+// miniMaxSum([2, 1, 3, 4, 5]);
