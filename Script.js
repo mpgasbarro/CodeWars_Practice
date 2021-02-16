@@ -1986,16 +1986,56 @@
 // 	console.log(items);
 // }
 
-function insertionSort(items) {
-	for (let i = 0; i < items.length; i++) {
-		value = items[i];
-		for (var j = i - 1; j > -1 && items[j] > value; j--) {
-			items[j + 1] = items[j];
+// function insertionSort(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		value = items[i];
+// 		for (var j = i - 1; j > -1 && items[j] > value; j--) {
+// 			items[j + 1] = items[j];
+// 		}
+// 		items[j + 1] = value;
+// 	}
+// 	return items;
+// }
+
+// function insertionSort(items) {
+// 	for (let i = 0; i < items.length; i++) {
+// 		value = items[i];
+// 		for (var j = i - 1; j > -1 && items[j] > value; j--) {
+// 			items[j + 1] = items[j];
+// 		}
+// 		items[j + 1] = value;
+// 	}
+// 	return items;
+// }
+
+// const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
+// console.log(insertionSort(list));
+
+// CodeWar  - 2/16/21
+// Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+
+// Examples
+// "()"              =>  true
+// ")(()))"          =>  false
+// "("               =>  false
+// "(())((()())())"  =>  true
+
+function validParentheses(parens) {
+	let openCount = 0;
+	let closeCount = 0;
+	let newArr = parens.split('');
+	for (let i = 0; i < newArr.length; i++) {
+		if (newArr[i] === '(' && openCount >= closeCount) {
+			openCount++;
+		} else {
+			closeCount++;
 		}
-		items[j + 1] = value;
 	}
-	return items;
+	if (openCount === closeCount) {
+		return true;
+	} else {
+		return false;
+	}
 }
 
-const list = [54, 26, 93, 17, 77, 31, 44, 55, 20];
-console.log(insertionSort(list));
+validParentheses(')(()))');
