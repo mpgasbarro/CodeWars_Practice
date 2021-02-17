@@ -2046,13 +2046,13 @@
 
 // Given an array  of  integers and a number, , perform  left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
 
-function rotLeft(a, d) {
-	let newArr = [];
-	for (let i = 0; i < d; i++) {
-		let first = a.shift();
-		a.push(first);
-	}
-	return a;
-}
+// function rotLeft(a, d) {
+// 	let newArr = [];
+// 	for (let i = 0; i < d; i++) {
+// 		let first = a.shift();
+// 		a.push(first);
+// 	}
+// 	return a;
+// }
 
-rotLeft([1, 2, 3, 4, 5], 4);
+// rotLeft([1, 2, 3, 4, 5], 4);
