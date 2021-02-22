@@ -2065,19 +2065,66 @@
 
 // The maximum height candles are  units high. There are  of them, so return .
 
-function birthdayCakeCandles(candles) {
-	let sortedCandles = candles.sort(function (a, b) {
-		return a - b;
-	});
-	let lastNumber = sortedCandles[candles.length - 1];
+// function birthdayCakeCandles(candles) {
+// 	candles.sort(function (a, b) {
+// 		return a - b;
+// 	});
+// 	console.log(candles);
+// 	let lastNumber = sortedCandles[candles.length - 1];
+// 	let count = 0;
+
+// 	for (let i = 0; i < candles.length; i++) {
+// 		if (candles[i] === lastNumber) {
+// 			count++;
+// 		}
+// 	}
+// 	return count;
+// }
+
+// birthdayCakeCandles([4, 4, 1, 3]);
+
+// _________________________________________________________
+// HackerRank - Anagrams - 2/22
+// A student is taking a cryptography class and has found anagrams to be very useful. Two strings are anagrams of each other if the first string's letters can be rearranged to form the second string. In other words, both strings must contain the same exact letters in the same exact frequency. For example, bacdc and dcbac are anagrams, but bacdc and dcbad are not.
+
+// The student decides on an encryption scheme that involves two large strings. The encryption is dependent on the minimum number of character deletions required to make the two strings anagrams. Determine this number.
+
+// Given two strings,  and , that may or may not be of the same length, determine the minimum number of character deletions required to make  and  anagrams. Any characters can be deleted from either of the strings.
+
+// Split the strings into arrays
+// loop through the arrays
+// determining if it is in an empty object, there by inputting it into an object.
+// Go through the values of the object for those that equal one and count ++
+
+function makeAnagram(a, b) {
+	let sortedArrLong = a.length >= b.length ? a.split('') : b.split('');
+	let sortedArrShort = a.length >= b.length ? b.split('') : a.split('');
+	let whichLetters = {};
 	let count = 0;
 
-	for (let i = 0; i < candles.length; i++) {
-		if (candles[i] === lastNumber) {
+	for (let i = 0; i < sortedArrLong.length; i++) {
+		if (Object.keys(whichLetters).includes(sortedArrLong[i])) {
+			whichLetters[sortedArrLong[i]] = whichLetters[sortedArrLong[i]] + 1;
 			count++;
+		} else {
+			whichLetters[sortedArrLong[i]] = 0;
+		}
+		if (Object.keys(whichLetters).includes(sortedArrShort[i])) {
+			whichLetters[sortedArrShort[i]] = whichLetters[sortedArrShort[i]] + 1;
+			count++;
+		} else {
+			whichLetters[sortedArrShort[i]] = 0;
 		}
 	}
-	return count;
+	console.log(whichLetters);
+	let final = Object.values(whichLetters);
+
+	final.forEach(function (zero) {
+		if (zero === 0 && zero != undefined) {
+			count++;
+		}
+	});
+	console.log(count);
 }
 
-birthdayCakeCandles([4, 4, 1, 3]);
+makeAnagram('fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke');
