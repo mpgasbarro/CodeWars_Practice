@@ -2096,35 +2096,55 @@
 // determining if it is in an empty object, there by inputting it into an object.
 // Go through the values of the object for those that equal one and count ++
 
-function makeAnagram(a, b) {
-	let sortedArrLong = a.length >= b.length ? a.split('') : b.split('');
-	let sortedArrShort = a.length >= b.length ? b.split('') : a.split('');
-	let whichLetters = {};
-	let count = 0;
+// function makeAnagram(a, b) {
+// 	let sortedArrLong = a.length >= b.length ? a.split('') : b.split('');
+// 	let sortedArrShort = a.length >= b.length ? b.split('') : a.split('');
+// 	let whichLetters = {};
+// 	let count = 0;
 
-	for (let i = 0; i < sortedArrLong.length; i++) {
-		if (Object.keys(whichLetters).includes(sortedArrLong[i])) {
-			whichLetters[sortedArrLong[i]] = whichLetters[sortedArrLong[i]] + 1;
-			count++;
-		} else {
-			whichLetters[sortedArrLong[i]] = 0;
-		}
-		if (Object.keys(whichLetters).includes(sortedArrShort[i])) {
-			whichLetters[sortedArrShort[i]] = whichLetters[sortedArrShort[i]] + 1;
-			count++;
-		} else {
-			whichLetters[sortedArrShort[i]] = 0;
-		}
+// 	for (let i = 0; i < sortedArrLong.length; i++) {
+// 		if (Object.keys(whichLetters).includes(sortedArrLong[i])) {
+// 			whichLetters[sortedArrLong[i]] = whichLetters[sortedArrLong[i]] + 1;
+// 			count++;
+// 		} else {
+// 			whichLetters[sortedArrLong[i]] = 0;
+// 		}
+// 		if (Object.keys(whichLetters).includes(sortedArrShort[i])) {
+// 			whichLetters[sortedArrShort[i]] = whichLetters[sortedArrShort[i]] + 1;
+// 			count++;
+// 		} else {
+// 			whichLetters[sortedArrShort[i]] = 0;
+// 		}
+// 	}
+// 	console.log(whichLetters);
+// 	let final = Object.values(whichLetters);
+
+// 	final.forEach(function (zero) {
+// 		if (zero === 0 && zero != undefined) {
+// 			count++;
+// 		}
+// 	});
+// 	console.log(count);
+// }
+
+// makeAnagram('fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke');
+
+// ______________________________
+// The function 'fibonacci' should return an array of fibonacci numbers. The function takes a number as an argument to decide how many no. of elements to produce. If the argument is less than or equal to 0 then return empty array
+
+// Example:
+
+function fibonacci(n) {
+	let sum = 0;
+	newArr = [0, 1];
+	if (n <= 0) {
+		return [];
 	}
-	console.log(whichLetters);
-	let final = Object.values(whichLetters);
-
-	final.forEach(function (zero) {
-		if (zero === 0 && zero != undefined) {
-			count++;
-		}
-	});
-	console.log(count);
+	for (let i = 1; i < n - 1; i++) {
+		sum = newArr[i] + newArr[i - 1];
+		newArr.push(sum);
+	}
+	return newArr;
 }
 
-makeAnagram('fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke');
+fibonacci(4);
