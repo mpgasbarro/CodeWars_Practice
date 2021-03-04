@@ -2134,17 +2134,122 @@
 
 // Example:
 
-function fibonacci(n) {
-	let sum = 0;
-	newArr = [0, 1];
-	if (n <= 0) {
-		return [];
+// function fibonacci(n) {
+// 	let sum = 0;
+// 	newArr = [0, 1];
+// 	if (n <= 0) {
+// 		return [];
+// 	}
+// 	for (let i = 1; i < n - 1; i++) {
+// 		sum = newArr[i] + newArr[i - 1];
+// 		newArr.push(sum);
+// 	}
+// 	return newArr;
+// }
+
+// fibonacci(4);
+
+// ____________________________________________
+// Codewar - Multiples of 3 or 5
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
+
+// Note: If the number is a multiple of both 3 and 5, only count it once. Also, if a number is negative, return 0(for languages that do have them)
+
+// Courtesy of projecteuler.net
+
+// function solution(number) {
+// 	sum = 0
+// 	for(let i = 1; i < number; i++){
+// 		if(i % 3 === 0 && i % 5 != 0){
+// 			sum += i
+// 		} else if ( i % 5 === 0 && i % 3 !== 0){
+// 			sum += i
+// 		} else if ( i % 5 === 0 && i % 3 === 0)
+// 			sum += i
+// 	}
+// 	return (sum);
+// }
+
+// solution(16);
+
+// CodeWar - How Many Numbers III - 3/3
+// We want to generate all the numbers of three digits where:
+
+// the sum of their digits is equal to 10.
+
+// their digits are in increasing order (the numbers may have two or more equal contiguous digits)
+
+// The numbers that fulfill the two above constraints are: 118, 127, 136, 145, 226, 235, 244, 334
+
+// Make a function that receives two arguments:
+
+// the sum of digits value
+
+// the desired number of digits for the numbers
+
+// The function should output an array with three values: [1,2,3]
+
+// 1 - the total number of possible numbers
+
+// 2 - the minimum number
+
+// 3 - the maximum number
+
+// The example given above should be:
+
+// findAll(10, 3) => [8, "118", "334"]
+// If we have only one possible number as a solution, it should output a result like the one below:
+
+// findAll(27, 3) => [1, "999", "999"]
+// If there are no possible numbers, the function should output the empty array.
+
+// findAll(84, 4) => []
+// The number of solutions climbs up when the number of digits increases.
+
+// findAll(35, 6) => [123, '116999', '566666']
+// Features of the random tests:
+
+// Number of tests: 112
+// Sum of digits value between 20 and 65
+// Amount of digits between 2 and 17
+
+// _____________________________________________
+// ***SOLUTION***
+function findAll(n, k) {
+	let number = Math.pow(10, k - 1)
+	let highNum = Math.pow(10, k)
+	let sum = 0
+	let answerOne = []
+	for( let i = number; i < highNum; i++){
+		let sortedNum = i.toString().split("")
+		console.log(sortedNum);
+		for( let j = 0; j < sortedNum.length; j++ ){
+			console.log(sortedNum);
+		}
 	}
-	for (let i = 1; i < n - 1; i++) {
-		sum = newArr[i] + newArr[i - 1];
-		newArr.push(sum);
-	}
-	return newArr;
+
+	
+
 }
 
-fibonacci(4);
+
+findAll(10, 3)
+
+// 	for(let i=0; i< arr.length; i++){
+// 		let left = i + 1;
+// 		let right = arr.length - 1;
+// 		let total = 0;
+// 		while(left < right){
+// 			total = arr[left] + arr[right] + arr[i]
+// 			if(total < target){
+// 				left ++
+// 			} else if ( total > target){
+// 				right --
+// 			} else {
+// 				return[i, left, right]
+// 			}
+// 		}
+// 	}
+// }
