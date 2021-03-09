@@ -2217,25 +2217,25 @@
 
 // _____________________________________________
 // ***SOLUTION***
-function findAll(n, k) {
-	let number = Math.pow(10, k - 1)
-	let highNum = Math.pow(10, k)
-	let sum = 0
-	let answerOne = []
-	for( let i = number; i < highNum; i++){
-		let sortedNum = i.toString().split("")
-		console.log(sortedNum);
-		for( let j = 0; j < sortedNum.length; j++ ){
-			console.log(sortedNum);
-		}
-	}
+// function findAll(n, k) {
+// 	let number = Math.pow(10, k - 1)
+// 	let highNum = Math.pow(10, k)
+// 	let sum = 0
+// 	let answerOne = []
+// 	for( let i = number; i < highNum; i++){
+// 		let sortedNum = i.toString().split("")
+// 		console.log(sortedNum);
+// 		for( let j = 0; j < sortedNum.length; j++ ){
+// 			console.log(sortedNum);
+// 		}
+// 	}
 
 	
 
-}
+// }
 
 
-findAll(10, 3)
+// findAll(10, 3)
 
 // 	for(let i=0; i< arr.length; i++){
 // 		let left = i + 1;
@@ -2253,3 +2253,82 @@ findAll(10, 3)
 // 		}
 // 	}
 // }
+
+// HackerRank - Drawing Book - 3/3/20
+// A teacher asks the class to open their books to a page number. A student can either start turning pages from the front of the book or from the back of the book. They always turn pages one at a time. When they open the book, page  is always on the right side:
+
+// image
+
+// When they flip page , they see pages  and . Each page except the last page will always be printed on both sides. The last page may only be printed on the front, given the length of the book. If the book is  pages long, and a student wants to turn to page , what is the minimum number of pages to turn? They can start at the beginning or the end of the book.
+
+// Given  and , find and print the minimum number of pages that must be turned in order to arrive at page .
+
+
+// **Solution**
+// function pageCount(n, p) {
+// 	 let sumFront = 0
+// 	 let sumBack = 0
+// 	for( let i = 2; i < n; i+= 2){
+// 		sumFront++
+// 		if( i === p || i - 1 === p){
+// 			break
+// 		}
+// 	}
+
+// 	for ( let j = n - 1; j >= 1; j-=2){
+// 		sumBack++
+// 		if( j === p || j + 1 === p){
+// 			break
+// 		}
+
+// 	}
+// 	if(sumFront <= sumBack){
+// 		return(sumFront);
+// 	} else if (sumBack <= sumFront ) {
+// 		return(sumBack - 1);
+// 	}
+
+// }
+
+// console.log(pageCount(5, 4))
+
+
+// _________________________________________________
+// **** HACKER RANK ****
+// 
+function sumPairs(ints, s) {
+	const newInts = []
+	for(let i = 0; i < ints.length; i++){
+		newInts.push(ints[i])
+	}
+
+	let left = 0;
+	let orderedArr = ints.sort((a,b) => a - b)
+	let right = ints.length - 1
+	let total = []
+	let hereisLeft;
+	let hereisRight;
+	while(left <= right){
+		if(orderedArr[left] + orderedArr[right] < s){
+
+				left++
+			} else if (orderedArr[left] + orderedArr[right] > s){
+				right--
+			} else {
+					console.log(orderedArr[left]);
+					console.log(orderedArr[right]);
+					hereisLeft = newInts.indexOf(orderedArr[left]);
+					hereisRight = newInts.indexOf(orderedArr[right])
+				}
+
+				// if(hereisLeft < hereisRight){
+				// 	return [orderedArr[left], orderedArr[right]] } 
+				// else {
+				// 		return [orderedArr[right], orderedArr[left]];
+				// 	}
+		}
+
+	}
+
+
+console.log(sumPairs([1, 4, 8, 7, 3, 15], 8));
