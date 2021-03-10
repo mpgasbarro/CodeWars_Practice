@@ -2296,39 +2296,105 @@
 // _________________________________________________
 // **** HACKER RANK ****
 // 
-function sumPairs(ints, s) {
-	const newInts = []
-	for(let i = 0; i < ints.length; i++){
-		newInts.push(ints[i])
-	}
+// function sumPairs(ints, s) {
+// 	const newInts = []
+// 	for(let i = 0; i < ints.length; i++){
+// 		newInts.push(ints[i])
+// 	}
 
-	let left = 0;
-	let orderedArr = ints.sort((a,b) => a - b)
-	let right = ints.length - 1
-	let total = []
-	let hereisLeft;
-	let hereisRight;
-	while(left <= right){
-		if(orderedArr[left] + orderedArr[right] < s){
+// 	let left = 0;
+// 	let orderedArr = ints.sort((a,b) => a - b)
+// 	let right = ints.length - 1
+// 	let total = []
+// 	let hereisLeft;
+// 	let hereisRight;
+// 	while(left <= right){
+// 		if(orderedArr[left] + orderedArr[right] < s){
 
-				left++
-			} else if (orderedArr[left] + orderedArr[right] > s){
-				right--
+// 				left++
+// 			} else if (orderedArr[left] + orderedArr[right] > s){
+// 				right--
+// 			} else {
+// 					console.log(orderedArr[left]);
+// 					console.log(orderedArr[right]);
+// 					hereisLeft = newInts.indexOf(orderedArr[left]);
+// 					hereisRight = newInts.indexOf(orderedArr[right])
+// 				}
+
+// 				// if(hereisLeft < hereisRight){
+// 				// 	return [orderedArr[left], orderedArr[right]] } 
+// 				// else {
+// 				// 		return [orderedArr[right], orderedArr[left]];
+// 				// 	}
+// 		}
+
+// 	}
+
+
+// console.log(sumPairs([1, 4, 8, 7, 3, 15], 8));
+
+
+// break 
+
+// __________________________________________________
+// CODEWRS - Weight for Weight
+// My friend John and I are members of the "Fat to Fit Club (FFC)". John is worried because each month a list with the weights of members is published and each month he is the last on the list which means he is the heaviest.
+
+// I am the one who establishes the list so I told him: "Don't worry any more, I will modify the order of the list". It was decided to attribute a "weight" to numbers. The weight of a number will be from now on the sum of its digits.
+
+// For example 99 will have "weight" 18, 100 will have "weight" 1 so in the list 100 will come before 99.
+
+// Given a string with the weights of FFC members in normal order can you give this string ordered by "weights" of these numbers?
+
+// Example:
+// "56 65 74 100 99 68 86 180 90" ordered by numbers weights becomes: 
+
+// "100 180 90 56 65 74 68 86 99"
+// When two numbers have the same "weight", let us class them as if they were strings (alphabetical ordering) and not numbers:
+
+// 180 is before 90 since, having the same "weight" (9), it comes before as a string.
+
+// All numbers in the list are positive numbers and the list can be empty.
+
+// Notes
+// it may happen that the input string have leading, trailing whitespaces and more than a unique whitespace between two consecutive numbers
+// For C: The result is freed.
+
+// ***SOLUTION****
+
+function orderWeight(strng) {
+	let splitArrOne = strng.split("")
+	let splitArrTwo = strng.split(" ")
+	let sum = 0;
+	let numberString = []
+	let sortObj = {}
+	let finalArr = []
+	for(let i = 0; i <= splitArrOne.length; i++){
+			if(splitArrOne[i] != " "){
+				sum += parseInt(splitArrOne[i])
 			} else {
-					console.log(orderedArr[left]);
-					console.log(orderedArr[right]);
-					hereisLeft = newInts.indexOf(orderedArr[left]);
-					hereisRight = newInts.indexOf(orderedArr[right])
-				}
-
-				// if(hereisLeft < hereisRight){
-				// 	return [orderedArr[left], orderedArr[right]] } 
-				// else {
-				// 		return [orderedArr[right], orderedArr[left]];
-				// 	}
-		}
+				numberString.push(sum)
+				sum = 0
+			}
 
 	}
+	for (let i = 0; i < numberString.length; i++){
+		sortObj[splitArrTwo[i]] = numberString[i]
+	}
+	let orderedNumber  = numberString.sort((a,b) => a - b)
+	console.log(orderedNumber);
+	console.log(sortObj);
 
+	for(let i = 0; i < orderedNumber.length; i++){
+		for( const [key, value] of Object.entries(sortObj)){
+			console.log(key);
+			console.log(value);
+			if( orderedNumber[i] == parseInt(value)){
+				finalArr.splice(i, 1, splitArrTwo[i])
+		}
+		}
+	}
+		console.log(finalArr);
+}
 
-console.log(sumPairs([1, 4, 8, 7, 3, 15], 8));
+orderWeight("56 66 74 100 99 68 86 180 90")
