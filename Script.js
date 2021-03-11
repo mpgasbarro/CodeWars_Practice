@@ -2362,39 +2362,82 @@
 
 // ***SOLUTION****
 
-function orderWeight(strng) {
-	let splitArrOne = strng.split("")
-	let splitArrTwo = strng.split(" ")
-	let sum = 0;
-	let numberString = []
-	let sortObj = {}
-	let finalArr = []
-	for(let i = 0; i <= splitArrOne.length; i++){
-			if(splitArrOne[i] != " "){
-				sum += parseInt(splitArrOne[i])
-			} else {
-				numberString.push(sum)
-				sum = 0
+// function orderWeight(strng) {
+// 	let splitArrOne = strng.split("")
+// 	splitArrOne.push(" ")
+// 	let splitArrTwo = strng.split(" ")
+// 	let sum = 0;
+// 	let numberString = []
+// 	let sortObj = {}
+// 	let finalArr = []
+// 	let finalfinalArr = []
+// 	for(let i = 0; i < splitArrOne.length; i++){
+// 			if(splitArrOne[i] !== " "){
+// 				sum += parseInt(splitArrOne[i])
+// 			} else {
+// 				numberString.push(sum)
+// 				sum = 0
+// 			}
+
+// 	}
+// 	console.log(numberString);
+// 	console.log(sum);
+// 	for (let i = 0; i < numberString.length; i++){
+// 		sortObj[splitArrTwo[i]] = numberString[i]
+// 	}
+// 	let orderedNumber  = numberString.sort((a,b) => a - b)
+
+// 	for(let i = 0; i < orderedNumber.length; i++){
+// 		for( const [key, value] of Object.entries(sortObj)){
+// 			if( orderedNumber[i] == parseInt(value)){
+// 				finalArr.push(key)
+// 		}
+// 		}
+// 	}
+// 	for(let i = 0; i < finalArr.length; i++){
+// 		if(finalfinalArr.indexOf(finalArr[i]) == -1){
+// 			finalfinalArr.push(finalArr[i])
+// 		}
+// 	}
+// 	console.log(finalfinalArr);
+// }
+
+// orderWeight('56 65 74 100 99 68 86 180 90');
+
+
+// CODEWAR - 3/11
+// Welcome.
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+// If anything in the text isn't a letter, ignore it and don't return it.
+
+// "a" = 1, "b" = 2, etc.
+
+// Example
+// alphabetPosition("The sunset sets at twelve o' clock.")
+// Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
+
+
+
+
+
+function alphabetPosition(text) {
+	let alpha = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ")
+	let textArr = text.toLowerCase().split("")
+	let answer = []
+	for( let i = 0; i < textArr.length; i++){
+		for(let j = 0; j < alpha.length; j++){
+			// console.log(alpha[i] + " this is alpha");
+			// console.log(textArr[j] + " this is textArr");
+			if(textArr[i] === alpha[j]){
+				answer.push(j + 1)
 			}
-
-	}
-	for (let i = 0; i < numberString.length; i++){
-		sortObj[splitArrTwo[i]] = numberString[i]
-	}
-	let orderedNumber  = numberString.sort((a,b) => a - b)
-	console.log(orderedNumber);
-	console.log(sortObj);
-
-	for(let i = 0; i < orderedNumber.length; i++){
-		for( const [key, value] of Object.entries(sortObj)){
-			console.log(key);
-			console.log(value);
-			if( orderedNumber[i] == parseInt(value)){
-				finalArr.splice(i, 1, splitArrTwo[i])
-		}
 		}
 	}
-		console.log(finalArr);
+	return(answer.join(" ").toString());
+	
+
 }
 
-orderWeight("56 66 74 100 99 68 86 180 90")
+alphabetPosition("The sunset sets at twelve o' clock.");
