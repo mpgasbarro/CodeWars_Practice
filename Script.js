@@ -2230,10 +2230,7 @@
 // 		}
 // 	}
 
-	
-
 // }
-
 
 // findAll(10, 3)
 
@@ -2263,7 +2260,6 @@
 
 // Given  and , find and print the minimum number of pages that must be turned in order to arrive at page .
 
-
 // **Solution**
 // function pageCount(n, p) {
 // 	 let sumFront = 0
@@ -2292,10 +2288,9 @@
 
 // console.log(pageCount(5, 4))
 
-
 // _________________________________________________
 // **** HACKER RANK ****
-// 
+//
 // function sumPairs(ints, s) {
 // 	const newInts = []
 // 	for(let i = 0; i < ints.length; i++){
@@ -2322,7 +2317,7 @@
 // 				}
 
 // 				// if(hereisLeft < hereisRight){
-// 				// 	return [orderedArr[left], orderedArr[right]] } 
+// 				// 	return [orderedArr[left], orderedArr[right]] }
 // 				// else {
 // 				// 		return [orderedArr[right], orderedArr[left]];
 // 				// 	}
@@ -2330,11 +2325,9 @@
 
 // 	}
 
-
 // console.log(sumPairs([1, 4, 8, 7, 3, 15], 8));
 
-
-// break 
+// break
 
 // __________________________________________________
 // CODEWRS - Weight for Weight
@@ -2347,7 +2340,7 @@
 // Given a string with the weights of FFC members in normal order can you give this string ordered by "weights" of these numbers?
 
 // Example:
-// "56 65 74 100 99 68 86 180 90" ordered by numbers weights becomes: 
+// "56 65 74 100 99 68 86 180 90" ordered by numbers weights becomes:
 
 // "100 180 90 56 65 74 68 86 99"
 // When two numbers have the same "weight", let us class them as if they were strings (alphabetical ordering) and not numbers:
@@ -2404,7 +2397,6 @@
 
 // orderWeight('56 65 74 100 99 68 86 180 90');
 
-
 // CODEWAR - 3/11
 // Welcome.
 
@@ -2418,26 +2410,143 @@
 // alphabetPosition("The sunset sets at twelve o' clock.")
 // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
 
+// function alphabetPosition(text) {
+// 	let alpha = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ")
+// 	let textArr = text.toLowerCase().split("")
+// 	let answer = []
+// 	for( let i = 0; i < textArr.length; i++){
+// 		for(let j = 0; j < alpha.length; j++){
+// 			// console.log(alpha[i] + " this is alpha");
+// 			// console.log(textArr[j] + " this is textArr");
+// 			if(textArr[i] === alpha[j]){
+// 				answer.push(j + 1)
+// 			}
+// 		}
+// 	}
+// 	return(answer.join(" ").toString());
 
+// }
 
+// alphabetPosition("The sunset sets at twelve o' clock.");
 
+//
+// CODEWAR - IQ Test - Bob is preparing to pass IQ test. The most frequent task in this test is to find out which one of the given numbers differs from the others. Bob observed that one number usually differs from the others in evenness. Help Bob — to check his answers, he needs a program that among the given numbers finds one that is different in evenness, and return a position of this number.
 
-function alphabetPosition(text) {
-	let alpha = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split(" ")
-	let textArr = text.toLowerCase().split("")
-	let answer = []
-	for( let i = 0; i < textArr.length; i++){
-		for(let j = 0; j < alpha.length; j++){
-			// console.log(alpha[i] + " this is alpha");
-			// console.log(textArr[j] + " this is textArr");
-			if(textArr[i] === alpha[j]){
-				answer.push(j + 1)
-			}
+// ! Keep in mind that your task is to help Bob solve a real IQ test, which means indexes of the elements start from 1 (not 0)
+
+// function iqTest(numbers) {
+// 	let newArr = numbers.split("")
+// 	let ObjOfIt = {
+// 		"even": 0,
+// 		"odd": 0
+// 	}
+// 	for(let i = 0; i < newArr.length; i++){
+// 		if(parseInt(numbers[i]) % 2 === 0 ){
+// 			console.log("hello");
+// 			ObjOfIt["even"]++
+// 		} else if(parseInt(numbers[i] % 2 !== 0 || parseInt(numbers[i] != NaN))) {
+// 			console.log("yehaw");
+// 			ObjOfIt["odd"]++
+// 		}
+// 	}
+// 	console.log(ObjOfIt);
+// 	console.log(NaN);
+// }
+
+// iqTest('2 4 7 8 10');
+
+// _____________________________________________________________
+// CODEWAR - 3/16/21
+// Let us consider this example (array written in general format):
+
+// ls = [0, 1, 3, 6, 10]
+
+// Its following parts:
+
+// ls = [0, 1, 3, 6, 10]
+// ls = [1, 3, 6, 10]
+// ls = [3, 6, 10]
+// ls = [6, 10]
+// ls = [10]
+// ls = []
+// The corresponding sums are (put together in a list): [20, 20, 19, 16, 10, 0]
+
+// let  answer=[]
+
+// function partsSums(ls) {
+// 	let sum = 0
+// 	if(ls.length < 1){
+// 		answer.push(0)
+// 		let finalAnswer = [...answer]
+// 			answer = []
+// 		return finalAnswer
+// 	} else {
+// 	for(let i = 0; i < ls.length; i++){
+// 		sum += ls[i]
+
+// 	}
+// 	answer.push(sum)
+// 	ls.shift()
+// }
+// 	return partsSums(ls)
+// }
+
+// console.log(partsSums([0, 1, 3, 6, 10]));
+
+// _------------------------------------------
+// Codewars - Human Readable time
+// Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
+
+// HH = hours, padded to 2 digits, range: 00 - 99
+// MM = minutes, padded to 2 digits, range: 00 - 59
+// SS = seconds, padded to 2 digits, range: 00 - 59
+// The maximum time never exceeds 359999 (99:59:59)
+
+// You can find some examples in the test fixtures.
+
+function humanReadable(seconds) {
+	let hourCount = 0;
+	let minuteCount = 0;
+	let secondCount = seconds;
+	let minutes = seconds / 60;
+	let hours = minutes / 60;
+	let answer = ['00', ':', '00', ':', '00'];
+
+	for (let i = 1; i <= seconds; i++) {
+		if (i % 3600 == 0) {
+			hourCount++;
+			minuteCount -= 60;
+		} else if (i % 60 === 0 && i % 3600 != 0) {
+			minuteCount++;
+			secondCount -= 60;
 		}
 	}
-	return(answer.join(" ").toString());
-	
+	console.log(hourCount);
+	console.log(minuteCount);
+	console.log(secondCount);
 
+	if (hourCount < 1) {
+	} else if (hourCount < 10 && hourCount >= 1) {
+		answer[0] = '0' + hourCount.toString();
+	} else {
+		answer[0] = hourCount.toString();
+	}
+
+	if (minuteCount < 1) {
+	} else if (minuteCount < 10 && minuteCount >= 1) {
+		answer[2] = '0' + minuteCount.toString();
+	} else if (minuteCount < 60 && minuteCount > 0) {
+		answer[2] = minuteCount.toString();
+	}
+
+	if (secondCount < 1) {
+	} else if (secondCount < 10 && secondCount >= 1) {
+		answer[4] = '0' + secondCount.toString();
+	} else if (secondCount < 60 && secondCount > 0) {
+		answer[4] = secondCount.toString();
+	}
+
+	console.log(answer.join('').toString());
 }
 
-alphabetPosition("The sunset sets at twelve o' clock.");
+humanReadable(359999);
